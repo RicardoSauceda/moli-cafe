@@ -1,0 +1,873 @@
+/* Utilidades responsive adicionales */
+.text-responsive {
+    font-size: clamp(1rem, 4vw, 1.5rem);
+}
+
+.padding-responsive {
+    padding: clamp(1rem, 4vw, 2rem);
+}
+
+.gap-responsive {
+    gap: clamp(1rem, 3vw, 1.5rem);
+}
+
+/* Ocultar barra de scroll horizontal */
+.scrollbar-hide {
+    -ms-overflow-style: none;  /* IE y Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari y Opera */
+}
+
+/* Animaciones controladas por data-anim */
+.anim {
+    opacity: 0;
+    transform: translateY(16px);
+    transition: transform .7s ease, opacity .7s ease;
+    will-change: transform, opacity;
+}
+
+.anim.in {
+    opacity: 1;
+    transform: none;
+}
+
+.anim.from-left {
+    transform: translateX(-24px);
+}
+
+.anim.from-right {
+    transform: translateX(24px);
+}
+
+.anim.zoom-in {
+    transform: scale(.94);
+}
+
+.anim.flip-in {
+    transform: rotateX(8deg);
+    transform-origin: top;
+}
+
+/* Tabs modernas */
+.tabs-track {
+    scroll-snap-type: x mandatory;
+    position: relative;
+    /* Ocultar scrollbars */
+    -ms-overflow-style: none;  /* IE y Edge */
+    scrollbar-width: none;  /* Firefox */
+}
+
+.tabs-track::-webkit-scrollbar {
+    display: none;  /* Chrome, Safari y Opera */
+}
+
+.tab-indicator {
+    position: absolute;
+    bottom: -1px;
+    height: 3px;
+    background: var(--color-moli-yellow, #fff000);
+    border-radius: 2px;
+    left: 0;
+    width: 0;
+    transition: left .3s ease, width .3s ease;
+}
+
+.tab-btn {
+    padding: 0.5rem 1rem;
+    border-radius: 10px;
+    border: 1px solid rgba(38, 32, 32, 0.2);
+    color: #d4d4d4;
+    transition: background-color 0.2s ease, transform 0.2s ease, box-shadow .2s ease;
+    white-space: nowrap;
+    background: transparent;
+    scroll-snap-align: start;
+}
+
+.tab-btn:hover {
+    background-color: rgba(38, 32, 32, 0.05);
+    transform: translateY(-1px);
+}
+
+.tab-btn:active {
+    transform: translateY(0);
+}
+
+.tab-btn:focus-visible {
+    outline: 3px solid rgba(255, 240, 0, .6);
+    outline-offset: 2px;
+}
+
+.tab-btn.active {
+    background: linear-gradient(180deg, var(--color-moli-yellow, #fff000), #e6d700);
+    color: #262020;
+    border-color: var(--color-moli-yellow, #fff000);
+    box-shadow: 0 8px 20px rgba(255, 240, 0, .25);
+}
+
+/* Paneles / Tarjetas de menú */
+.panel-title {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    font-weight: 800;
+    margin-bottom: 1rem;
+}
+
+.menu-card {
+    border: 2px solid #708090; /* Gris pizarra */
+    border-radius: 1rem;
+    overflow: hidden;
+    background: #ffffff;
+    box-shadow: 0 4px 8px rgba(112, 128, 144, 0.2);
+    transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    margin: 0 auto; /* Centrar las tarjetas */
+    max-width: 100%; /* Asegurar que no excedan el contenedor */
+}
+
+.menu-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(112, 128, 144, 0.3);
+    border-color: #5f6a7a; /* Gris pizarra más oscuro en hover */
+}
+
+.menu-img {
+    width: 100%;
+    height: clamp(160px, 22vw, 220px);
+    object-fit: cover;
+    display: block;
+}
+
+.menu-info {
+    padding: .75rem 1rem;
+    text-align: center; /* Centrar el texto */
+}
+
+.menu-info h4 {
+    font-weight: 600;
+    color: #ffffff;
+    font-size: 1rem;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* Centrado de grids del menú */
+.tab-panel .grid {
+    justify-items: center; /* Centra los elementos de la grid */
+    place-items: center; /* Centrado adicional */
+}
+
+/* Estilos adicionales para el contenedor de tabs */
+.tabs-track.overflow-x-auto {
+    -webkit-overflow-scrolling: touch; /* Scroll suave en iOS */
+}
+
+/* Botón de menú completo */
+.menu-pdf-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1.5rem;
+    background: linear-gradient(135deg, var(--color-moli-yellow, #fff000), #e6d700);
+    color: #262020;
+    border: 2px solid var(--color-moli-yellow, #fff000);
+    border-radius: 12px;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(255, 240, 0, 0.3);
+    font-size: 0.95rem;
+}
+
+.menu-pdf-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(255, 240, 0, 0.4);
+    background: linear-gradient(135deg, #fff200, #f0e000);
+}
+
+.menu-pdf-btn:active {
+    transform: translateY(-1px);
+}
+
+.menu-pdf-btn:focus-visible {
+    outline: 3px solid rgba(255, 240, 0, 0.6);
+    outline-offset: 2px;
+}
+
+.menu-pdf-btn i {
+    font-size: 1.1rem;
+}
+
+/* Utilidades de título con más peso */
+.moli-title {
+    font-weight: 800;
+    letter-spacing: .02em;
+    color: #fff;
+}
+
+.moli-title-black {
+    font-weight: 800;
+    letter-spacing: .02em;
+    color: #262020;
+}
+
+/* ==== RESPONSIVE DESIGN ==== */
+
+/* Mobile First - Dispositivos muy pequeños (< 480px) */
+@media (max-width: 479px) {
+    /* Banner responsive */
+    .banner-image {
+        height: 250px !important;
+        transform: rotate(3deg) scale(1.05) !important;
+    }
+    
+    /* Títulos más pequeños en móvil */
+    .moli-title {
+        font-size: 1.8rem !important;
+        line-height: 1.1;
+        margin-bottom: 0.5rem;
+    }
+
+    /* Ajustar altura del banner en móviles */
+    #banner {
+        min-height: 100vh;
+        padding-top: 2rem;
+    }
+
+    /* Banner container adjustments */
+    #banner .max-w-7xl {
+        padding-top: 2rem;
+    }
+
+    /* Grid adjustments for very small screens */
+    #banner .grid {
+        gap: 1.5rem;
+        grid-template-rows: auto auto;
+    }
+
+    /* Historia section mobile adjustments */
+    #historia {
+        padding-top: 3rem !important;
+        padding-bottom: 3rem !important;
+    }
+
+    #historia .grid {
+        gap: 1.5rem !important;
+    }
+
+    #historia h2 {
+        font-size: 1.25rem !important;
+        line-height: 1.3 !important;
+        margin-bottom: 0.75rem !important;
+    }
+
+    #historia h3 {
+        font-size: 1.1rem !important;
+        line-height: 1.3 !important;
+        margin-bottom: 0.75rem !important;
+    }
+
+    #historia p {
+        font-size: 0.75rem !important;
+        line-height: 1.4 !important;
+    }
+
+    /* Better spacing for mobile */
+    #historia .space-y-3 > * + * {
+        margin-top: 0.75rem !important;
+    }
+
+    /* Disable horizontal animations on mobile */
+    #historia [data-anim="from-left"],
+    #historia [data-anim="from-right"] {
+        transform: translateY(16px) !important;
+    }
+
+    #historia [data-anim="from-left"].in,
+    #historia [data-anim="from-right"].in {
+        transform: none !important;
+    }
+    
+    /* Pestañas del menú en móvil */
+    .tab-btn {
+        padding: 0.4rem 0.75rem;
+        font-size: 0.8rem;
+        min-width: 100px;
+        border-radius: 8px;
+    }
+    
+    .tab-btn i {
+        font-size: 0.7rem;
+        margin-right: 0.25rem !important;
+    }
+
+    /* Ocultar texto en tabs muy pequeñas, solo mostrar iconos */
+    .tab-btn-text {
+        display: none;
+    }
+    
+    /* Tarjetas del menú más compactas */
+    .menu-img {
+        height: clamp(120px, 25vw, 160px);
+    }
+    
+    .menu-info {
+        padding: 0.5rem 0.75rem;
+    }
+    
+    .menu-info h4 {
+        font-size: 0.875rem;
+        line-height: 1.2;
+    }
+
+    /* Menu grid responsive */
+    #menu .grid {
+        grid-template-columns: repeat(1, 1fr) !important;
+        gap: 1rem;
+    }
+
+    /* Panel titles */
+    .panel-title {
+        font-size: 1.25rem !important;
+        margin-bottom: 0.75rem !important;
+    }
+
+    /* All menu grids responsive */
+    .tab-panel .grid {
+        grid-template-columns: repeat(1, 1fr) !important;
+        gap: 0.75rem !important;
+    }
+
+    /* Show text on larger mobile screens */
+    .tab-btn-text {
+        display: inline !important;
+    }
+}
+
+/* Móviles (480px - 767px) */
+@media (min-width: 480px) and (max-width: 767px) {
+    .banner-image {
+        height: 350px !important;
+        transform: rotate(7deg) scale(1.08) !important;
+    }
+    
+    .tab-btn {
+        padding: 0.45rem 0.85rem;
+        font-size: 0.9rem;
+        min-width: 110px;
+    }
+    
+    .menu-img {
+        height: clamp(140px, 20vw, 180px);
+    }
+
+    /* Show text on medium mobile screens */
+    .tab-btn-text {
+        display: inline !important;
+        /* color: #FFFDD0 !important; */
+    }
+
+    /* Grid improvements for medium mobile */
+    .tab-panel .grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1rem !important;
+    }
+
+    /* Historia section for medium mobile */
+    #historia h2, #historia h3 {
+        font-size: 1.75rem !important;
+    }
+
+    #historia p {
+        font-size: 0.9rem !important;
+    }
+}
+
+/* Tablets (768px - 1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+    .banner-image {
+        height: 400px !important;
+        transform: rotate(8deg) scale(1.1) !important;
+    }
+    
+    /* Ajustar grid en tablets */
+    .tablet-grid-adjust {
+        grid-template-columns: repeat(2, 1fr) !important;
+    }
+    
+    /* Pestañas más espaciadas */
+    .tab-btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.95rem;
+        min-width: 130px;
+    }
+
+    /* Menu grid for tablets */
+    .tab-panel .grid {
+        grid-template-columns: repeat(3, 1fr) !important;
+        gap: 1.25rem !important;
+    }
+
+    /* Reset mobile-only restrictions */
+    .tab-btn-text {
+        display: inline !important;
+    }
+
+    #historia h2, #historia h3 {
+        font-size: 2rem !important;
+    }
+
+    #historia p {
+        font-size: 1rem !important;
+    }
+}
+
+/* Desktop pequeño (1024px - 1199px) */
+@media (min-width: 1024px) and (max-width: 1199px) {
+    .banner-image {
+        height: 450px !important;
+    }
+}
+
+/* Desktop grande (1200px+) */
+@media (min-width: 1200px) {
+    .banner-image {
+        height: 500px !important;
+    }
+    
+    /* Contenedores más amplios */
+    .max-w-8xl {
+        max-width: 96rem;
+    }
+}
+
+/* Altura de pantalla pequeña (landscape móviles) */
+@media (max-height: 600px) and (orientation: landscape) {
+    .banner-image {
+        height: 250px !important;
+    }
+    
+    .min-h-screen {
+        min-height: 100vh;
+    }
+}
+
+/* Preferencias de movimiento reducido */
+@media (prefers-reduced-motion: reduce) {
+    .anim,
+    .tab-btn,
+    .menu-card {
+        transition: none !important;
+    }
+    
+    .banner-image {
+        transform: none !important;
+    }
+}
+
+/* Fix horizontal animations on mobile devices */
+@media (max-width: 767px) {
+    .anim.from-left,
+    .anim.from-right {
+        transform: translateY(16px) !important;
+    }
+    
+    .anim.from-left.in,
+    .anim.from-right.in {
+        transform: none !important;
+        opacity: 1;
+    }
+}
+
+/* Modo oscuro */
+@media (prefers-color-scheme: dark) {
+    .menu-card {
+        background: #1a1a1a;
+        border-color: rgba(255, 255, 255, 0.1);
+    }
+}
+
+/* Impresión */
+@media print {
+    .banner-image,
+    .tab-btn,
+    .menu-card {
+        box-shadow: none !important;
+        transform: none !important;
+    }
+}
+
+/* Elementos decorativos con iconos de Font Awesome */
+.section-decorative {
+    position: relative;
+    overflow: hidden;
+}
+
+.coffee-icon-decoration {
+    position: absolute;
+    z-index: 1;
+    opacity: 0.08;
+    pointer-events: none;
+    color: #d2b48c;
+    font-size: 2rem;
+    animation: float-icon 8s ease-in-out infinite;
+}
+
+.coffee-icon-decoration.extra-large {
+    font-size: 4.5rem;
+    opacity: 0.04;
+}
+
+.coffee-icon-decoration.large {
+    font-size: 3rem;
+    opacity: 0.05;
+}
+
+.coffee-icon-decoration.medium {
+    font-size: 2.5rem;
+    opacity: 0.06;
+}
+
+.coffee-icon-decoration.small {
+    font-size: 1.5rem;
+    opacity: 0.1;
+}
+
+.coffee-icon-decoration.tiny {
+    font-size: 1rem;
+    opacity: 0.12;
+}
+
+/* Elementos específicos para ubicación */
+.ubicacion-decorations .coffee-icon-decoration:nth-child(1) {
+    top: 8%;
+    right: 12%;
+    animation-delay: 0s;
+    transform: rotate(-15deg);
+}
+
+.ubicacion-decorations .coffee-icon-decoration:nth-child(2) {
+    top: 55%;
+    right: 6%;
+    animation-delay: 2s;
+    transform: rotate(20deg);
+}
+
+.ubicacion-decorations .coffee-icon-decoration:nth-child(3) {
+    top: 22%;
+    left: 3%;
+    animation-delay: 4s;
+    transform: rotate(-10deg);
+}
+
+.ubicacion-decorations .coffee-icon-decoration:nth-child(4) {
+    bottom: 12%;
+    left: 8%;
+    animation-delay: 6s;
+    transform: rotate(25deg);
+}
+
+.ubicacion-decorations .coffee-icon-decoration:nth-child(5) {
+    top: 35%;
+    right: 25%;
+    animation-delay: 1s;
+    transform: rotate(35deg);
+}
+
+.ubicacion-decorations .coffee-icon-decoration:nth-child(6) {
+    bottom: 35%;
+    left: 20%;
+    animation-delay: 3s;
+    transform: rotate(-25deg);
+}
+
+.ubicacion-decorations .coffee-icon-decoration:nth-child(7) {
+    top: 70%;
+    left: 15%;
+    animation-delay: 5s;
+    transform: rotate(10deg);
+}
+
+.ubicacion-decorations .coffee-icon-decoration:nth-child(8) {
+    top: 5%;
+    left: 25%;
+    animation-delay: 7s;
+    transform: rotate(-30deg);
+}
+
+.ubicacion-decorations .coffee-icon-decoration:nth-child(9) {
+    bottom: 5%;
+    right: 20%;
+    animation-delay: 1.5s;
+    transform: rotate(15deg);
+}
+
+.ubicacion-decorations .coffee-icon-decoration:nth-child(10) {
+    top: 45%;
+    right: 35%;
+    animation-delay: 3.5s;
+    transform: rotate(-20deg);
+}
+
+/* Elementos específicos para redes sociales */
+.redes-decorations .coffee-icon-decoration:nth-child(1) {
+    top: 18%;
+    left: 12%;
+    animation-delay: 1s;
+    transform: rotate(15deg);
+}
+
+.redes-decorations .coffee-icon-decoration:nth-child(2) {
+    top: 12%;
+    right: 18%;
+    animation-delay: 3s;
+    transform: rotate(-25deg);
+}
+
+.redes-decorations .coffee-icon-decoration:nth-child(3) {
+    bottom: 22%;
+    left: 6%;
+    animation-delay: 5s;
+    transform: rotate(10deg);
+}
+
+.redes-decorations .coffee-icon-decoration:nth-child(4) {
+    bottom: 18%;
+    right: 10%;
+    animation-delay: 7s;
+    transform: rotate(-20deg);
+}
+
+.redes-decorations .coffee-icon-decoration:nth-child(5) {
+    top: 35%;
+    left: 25%;
+    animation-delay: 2s;
+    transform: rotate(30deg);
+}
+
+.redes-decorations .coffee-icon-decoration:nth-child(6) {
+    top: 8%;
+    left: 35%;
+    animation-delay: 4s;
+    transform: rotate(-15deg);
+}
+
+.redes-decorations .coffee-icon-decoration:nth-child(7) {
+    bottom: 35%;
+    right: 25%;
+    animation-delay: 6s;
+    transform: rotate(20deg);
+}
+
+.redes-decorations .coffee-icon-decoration:nth-child(8) {
+    bottom: 8%;
+    left: 30%;
+    animation-delay: 8s;
+    transform: rotate(-35deg);
+}
+
+.redes-decorations .coffee-icon-decoration:nth-child(9) {
+    top: 50%;
+    right: 5%;
+    animation-delay: 1.5s;
+    transform: rotate(25deg);
+}
+
+.redes-decorations .coffee-icon-decoration:nth-child(10) {
+    bottom: 50%;
+    left: 40%;
+    animation-delay: 3.5s;
+    transform: rotate(-10deg);
+}
+
+/* Formas abstractas adicionales con gradientes */
+.abstract-decoration {
+    position: absolute;
+    z-index: 1;
+    opacity: 0.06;
+    pointer-events: none;
+    border-radius: 50%;
+    background: linear-gradient(45deg, #f5deb3, #deb887);
+    animation: pulse-decoration 12s ease-in-out infinite;
+}
+
+.abstract-decoration.circle-1 {
+    width: 120px;
+    height: 120px;
+    top: 5%;
+    left: 3%;
+    background: radial-gradient(circle at 30% 30%, #f5deb3, transparent 70%);
+}
+
+.abstract-decoration.circle-2 {
+    width: 80px;
+    height: 80px;
+    bottom: 10%;
+    right: 5%;
+    background: radial-gradient(circle at 70% 70%, #deb887, transparent 60%);
+    animation-delay: 6s;
+}
+
+/* Animaciones para iconos y decoraciones */
+@keyframes float-icon {
+    0%, 100% { 
+        transform: translateY(0px) rotate(var(--rotation, 0deg)); 
+        opacity: 0.08;
+    }
+    25% { 
+        transform: translateY(-8px) rotate(calc(var(--rotation, 0deg) + 5deg)); 
+        opacity: 0.12;
+    }
+    50% { 
+        transform: translateY(-15px) rotate(var(--rotation, 0deg)); 
+        opacity: 0.06;
+    }
+    75% { 
+        transform: translateY(-8px) rotate(calc(var(--rotation, 0deg) - 5deg)); 
+        opacity: 0.10;
+    }
+}
+
+@keyframes pulse-decoration {
+    0%, 100% { 
+        opacity: 0.06; 
+        transform: scale(1);
+    }
+    50% { 
+        opacity: 0.08; 
+        transform: scale(1.1);
+    }
+}
+
+/* Colores específicos para diferentes iconos */
+.coffee-icon-decoration.mug {
+    color: #8b4513;
+}
+
+.coffee-icon-decoration.leaf {
+    color: #9acd32;
+}
+
+.coffee-icon-decoration.heart {
+    color: #cd853f;
+}
+
+.coffee-icon-decoration.star {
+    color: #daa520;
+}
+
+.coffee-icon-decoration.sun {
+    color: #ffa500;
+}
+
+.coffee-icon-decoration.circle {
+    color: #d2b48c;
+}
+
+.coffee-icon-decoration.bean {
+    color: #654321;
+}
+
+.coffee-icon-decoration.warm {
+    color: #deb887;
+}
+
+/* Responsive para elementos decorativos */
+@media (max-width: 767px) {
+    .coffee-icon-decoration {
+        font-size: 1.5rem;
+        opacity: 0.05;
+    }
+
+    .coffee-icon-decoration.extra-large {
+        font-size: 2.5rem;
+        opacity: 0.02;
+    }
+
+    .coffee-icon-decoration.large {
+        font-size: 2rem;
+        opacity: 0.03;
+    }
+
+    .coffee-icon-decoration.medium {
+        font-size: 1.8rem;
+        opacity: 0.04;
+    }
+
+    .coffee-icon-decoration.small {
+        font-size: 1rem;
+        opacity: 0.06;
+    }
+
+    .coffee-icon-decoration.tiny {
+        font-size: 0.8rem;
+        opacity: 0.08;
+    }
+
+    .abstract-decoration {
+        opacity: 0.04;
+        transform: scale(0.7);
+    }
+}
+
+@media (max-width: 479px) {
+    .coffee-icon-decoration {
+        font-size: 1.2rem;
+        opacity: 0.04;
+    }
+
+    .coffee-icon-decoration.large {
+        font-size: 1.8rem;
+        opacity: 0.02;
+    }
+
+    .abstract-decoration {
+        opacity: 0.03;
+        transform: scale(0.5);
+    }
+}
+
+/* Reducir animaciones para preferencias de accesibilidad */
+@media (prefers-reduced-motion: reduce) {
+    .coffee-icon-decoration,
+    .abstract-decoration {
+        animation: none !important;
+    }
+}
+
+/* Ocultar decoraciones en impresión */
+@media print {
+    .coffee-icon-decoration,
+    .abstract-decoration {
+        display: none !important;
+    }
+}
+
+/* Mejoras de accesibilidad táctil */
+@media (hover: none) and (pointer: coarse) {
+    /* Increase touch targets */
+    .tab-btn {
+        min-height: 44px;
+        padding: 0.75rem 1rem;
+    }
+
+    .menu-card {
+        cursor: pointer;
+    }
+
+    /* Better tap targets for mobile menu */
+    #mobile-menu a {
+        min-height: 48px;
+        display: flex;
+        align-items: center;
+    }
+
+    /* Footer links */
+    footer a {
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+    }
+}
