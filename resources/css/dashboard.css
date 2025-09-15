@@ -1,0 +1,287 @@
+/* Dashboard base styles inspired by landing, adapted to white background */
+:root {
+    --moli-yellow: #fff000;
+    --moli-black: #262020;
+    --moli-gray: #6b7280;
+    --ring: 0 0 0 3px rgba(255, 240, 0, .35)
+}
+
+* {
+    box-sizing: border-box
+}
+
+html,
+body {
+    height: 100%
+}
+
+body {
+    background: #fff;
+    color: var(--moli-black);
+    font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+    line-height: 1.5
+}
+
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 24px
+}
+
+/* Header / Navbar */
+.dashboard-header {
+    position: sticky;
+    top: 0;
+    z-index: 40;
+    background: #ffffffcc;
+    -webkit-backdrop-filter: saturate(180%) blur(8px);
+    backdrop-filter: saturate(180%) blur(8px);
+    border-bottom: 1px solid rgba(38, 32, 32, .08)
+}
+
+.dashboard-navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px
+}
+
+.brand {
+    font-weight: 800;
+    text-decoration: none;
+    color: var(--moli-black)
+}
+
+.nav-links a {
+    margin-right: 12px;
+    color: var(--moli-black);
+    text-decoration: none;
+    opacity: .9
+}
+
+.nav-links a:hover {
+    color: var(--moli-yellow)
+}
+
+.nav-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px
+}
+
+.user-pill {
+    background: #f3f4f6;
+    border: 1px solid #e5e7eb;
+    border-radius: 999px;
+    padding: 6px 10px;
+    font-size: .9rem
+}
+
+/* Buttons */
+.btn {
+    display: inline-block;
+    background: var(--moli-yellow);
+    color: var(--moli-black);
+    padding: 10px 14px;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: 700;
+    border: 1px solid #e5e7eb;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, .06)
+}
+
+.btn:hover {
+    filter: brightness(.98)
+}
+
+.btn.secondary {
+    background: #111827;
+    color: #fff;
+    border-color: #111827
+}
+
+.btn.secondary:hover {
+    filter: brightness(1.1)
+}
+
+.btn.ghost {
+    background: #fff;
+    border: 1px solid #e5e7eb;
+    color: var(--moli-black)
+}
+
+.btn.ghost:hover {
+    box-shadow: 0 0 0 3px rgba(17, 24, 39, .08)
+}
+
+/* Page structure */
+.page-content {
+    padding-top: 18px;
+    padding-bottom: 32px
+}
+
+.page-footer {
+    padding: 24px 0;
+    color: var(--moli-gray);
+    border-top: 1px solid rgba(38, 32, 32, .08);
+    margin-top: 24px
+}
+
+/* Cards & grids */
+.card {
+    background: #fff;
+    border-radius: 14px;
+    border: 1px solid rgba(38, 32, 32, .08);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .06);
+    padding: 18px
+}
+
+.grid {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr))
+}
+
+/* Tables */
+.table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0 10px
+}
+
+.table thead th {
+    font-size: .9rem;
+    color: #374151;
+    text-align: left;
+    padding: 10px
+}
+
+.table tbody tr {
+    background: #fff;
+    border: 1px solid rgba(38, 32, 32, .08)
+}
+
+.table tbody td {
+    padding: 10px;
+    border-top: 1px solid rgba(38, 32, 32, .06)
+}
+
+.table tbody tr:first-child td {
+    border-top: none
+}
+
+.table.striped tbody tr:nth-child(odd) {
+    background: #fafafa
+}
+
+/* Forms */
+.form-field {
+    margin-bottom: 14px
+}
+
+.label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 6px
+}
+
+.input,
+.select,
+.textarea {
+    width: 100%;
+    padding: 10px 12px;
+    border: 1px solid #e5e7eb;
+    border-radius: 10px;
+    background: #fff
+}
+
+.input:focus,
+.select:focus,
+.textarea:focus {
+    outline: none;
+    box-shadow: var(--ring);
+    border-color: var(--moli-yellow)
+}
+
+.checkbox {
+    display: flex;
+    align-items: center;
+    gap: 8px
+}
+
+/* Alerts */
+.alert {
+    padding: 10px 12px;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    border: 1px solid
+}
+
+.alert.success {
+    background: #f0fdf4;
+    border-color: #86efac;
+    color: #166534
+}
+
+.alert.error {
+    background: #fef2f2;
+    border-color: #fecaca;
+    color: #991b1b
+}
+
+/* Utilities */
+.m-0 {
+    margin: 0
+}
+
+.mb-2 {
+    margin-bottom: 8px
+}
+
+.mb-3 {
+    margin-bottom: 12px
+}
+
+.mb-4 {
+    margin-bottom: 16px
+}
+
+.flex {
+    display: flex
+}
+
+.items-center {
+    align-items: center
+}
+
+.justify-between {
+    justify-content: space-between
+}
+
+.gap-2 {
+    gap: 8px
+}
+
+/* Pagination (Laravel) override */
+.pagination {
+    display: flex;
+    gap: 8px;
+    list-style: none;
+    padding: 0
+}
+
+.pagination a,
+.pagination span {
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 8px;
+    border: 1px solid #e5e7eb;
+    text-decoration: none;
+    color: var(--moli-black)
+}
+
+.pagination .active span,
+.pagination a[aria-current="page"] {
+    background: var(--moli-yellow);
+    border-color: var(--moli-yellow)
+}

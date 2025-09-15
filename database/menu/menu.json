@@ -1,0 +1,274 @@
+{
+    "menu": [
+        {
+            "categoria": "Chapatas y Hamburguesas",
+            "items": [
+                {
+                    "producto": "Chapata italiana",
+                    "descripcion": "Queso, jamón, pepperoni, salami, aceitunas negras. Con papas a la francesa.",
+                    "precio": 129
+                },
+                {
+                    "producto": "Chapata napolitana",
+                    "descripcion": "Queso, milanesa de pollo, salsa de tomate. Con papas a la francesa.",
+                    "precio": 129
+                },
+                {
+                    "producto": "Chapata mexicana",
+                    "descripcion": "Queso, arrachera. Con papas a la francesa.",
+                    "precio": 129
+                },
+                {
+                    "producto": "Hamburguesa MoLi",
+                    "descripcion": "Hamburguesa con aderezo de chipotle. Con papas a la francesa.",
+                    "precio": 129
+                },
+                {
+                    "producto": "Croque MoLi",
+                    "descripcion": "Sándwich de pollo, jamón, tocino, queso, gratinado encima. Con papas a la francesa.",
+                    "precio": 129
+                },
+                {
+                    "producto": "Cuernito",
+                    "descripcion": "Cuernito de jamón y queso. Con papas a la francesa.",
+                    "precio": 69
+                },
+                {
+                    "producto": "MoLi peques",
+                    "descripcion": "Nuggets con papas a la francesa.",
+                    "precio": 99
+                }
+            ]
+        },
+        {
+            "categoria": "Crepas Saladas",
+            "items": [
+                {
+                    "producto": "Crepa clásica",
+                    "descripcion": "Jamón, queso mozzarella. Con papas a la francesa.",
+                    "precio": 120
+                },
+                {
+                    "producto": "Crepa pizza",
+                    "descripcion": "Pepperoni, queso mozzarella. Con papas a la francesa.",
+                    "precio": 120
+                }
+            ]
+        },
+        {
+            "categoria": "Crepas Dulces",
+            "items": [
+                {
+                    "producto": "Crepa de nutella",
+                    "descripcion": "Con helado de vainilla.",
+                    "precio": 120
+                },
+                {
+                    "producto": "Crepa de cajeta",
+                    "descripcion": "Con nuez y helado de vainilla.",
+                    "precio": 120
+                },
+                {
+                    "producto": "Crepa de frutos rojos",
+                    "descripcion": "Con helado de vainilla.",
+                    "precio": 120
+                }
+            ]
+        },
+        {
+            "categoria": "Pizzas",
+            "items": [
+                {
+                    "producto": "Pizza italiana",
+                    "descripcion": "Jamón, salami, pepperoni, queso mozzarella.",
+                    "precio": 119
+                },
+                {
+                    "producto": "Pizza española",
+                    "descripcion": "Jamón serrano, cebolla morada, tomate cherry, especias italianas, queso mozzarella.",
+                    "precio": 119
+                },
+                {
+                    "producto": "Pizza mexicana",
+                    "descripcion": "Chorizo, cebolla, chile jalapeño, queso mozzarella.",
+                    "precio": 119
+                },
+                {
+                    "producto": "Pizza pepperoni especial",
+                    "descripcion": "Pepperoni, aceitunas negras, queso mozzarella.",
+                    "precio": 119
+                }
+            ]
+        },
+        {
+            "categoria": "Pa’ Compartir",
+            "items": [
+                {
+                    "producto": "Platón botanero",
+                    "descripcion": "Boneless, dedos de queso, papas a la francesa, aderezo de la casa y ranch.",
+                    "precio": 279
+                },
+                {
+                    "producto": "Papas MoLi",
+                    "descripcion": "Papas a la francesa con queso amarillo y tocino.",
+                    "precio": 99
+                }
+            ]
+        },
+        {
+            "categoria": "Postres",
+            "items": [
+                {
+                    "producto": "Pastel de chocolate",
+                    "descripcion": "",
+                    "precio": 99
+                },
+                {
+                    "producto": "Cheesecake",
+                    "descripcion": "",
+                    "precio": 99
+                }
+            ]
+        },
+        {
+            "categoria": "Bebidas Calientes",
+            "items": [
+                {
+                    "producto": "Café americano",
+                    "descripcion": "",
+                    "precio": 39
+                },
+                {
+                    "producto": "Capuchino clásico",
+                    "descripcion": "",
+                    "precio": 89
+                },
+                {
+                    "producto": "Capuchino vainilla",
+                    "descripcion": "",
+                    "precio": 99
+                },
+                {
+                    "producto": "Capuchino chocolate",
+                    "descripcion": "",
+                    "precio": 99
+                },
+                {
+                    "producto": "Capuchino caramelo",
+                    "descripcion": "",
+                    "precio": 99
+                },
+                {
+                    "producto": "Capuchino cajeta",
+                    "descripcion": "",
+                    "precio": 99
+                },
+                {
+                    "producto": "Capuchino crema irlandesa",
+                    "descripcion": "",
+                    "precio": 109
+                },
+                {
+                    "producto": "Capuchino tiramisú",
+                    "descripcion": "",
+                    "precio": 109
+                },
+                {
+                    "producto": "Chocolate Abuelita",
+                    "descripcion": "",
+                    "precio": 75
+                },
+                {
+                    "producto": "Té",
+                    "descripcion": "",
+                    "precio": 35
+                }
+            ]
+        },
+        {
+            "categoria": "Bebidas Frías",
+            "items": [
+                {
+                    "producto": "Frappe clásico",
+                    "descripcion": "",
+                    "precio": 89
+                },
+                {
+                    "producto": "Frappe vainilla",
+                    "descripcion": "",
+                    "precio": 99
+                },
+                {
+                    "producto": "Frappe chocolate",
+                    "descripcion": "",
+                    "precio": 99
+                },
+                {
+                    "producto": "Frappe caramelo",
+                    "descripcion": "",
+                    "precio": 99
+                },
+                {
+                    "producto": "Frappe cajeta",
+                    "descripcion": "",
+                    "precio": 99
+                },
+                {
+                    "producto": "Frappe crema irlandesa",
+                    "descripcion": "",
+                    "precio": 99
+                },
+                {
+                    "producto": "Frappe oreo",
+                    "descripcion": "",
+                    "precio": 99
+                },
+                {
+                    "producto": "Frappe mazapán",
+                    "descripcion": "",
+                    "precio": 99
+                },
+                {
+                    "producto": "Malteada vainilla",
+                    "descripcion": "",
+                    "precio": 109
+                },
+                {
+                    "producto": "Malteada oreo",
+                    "descripcion": "",
+                    "precio": 119
+                },
+                {
+                    "producto": "Soda italiana",
+                    "descripcion": "Pregunta por sabores.",
+                    "precio": 129
+                },
+                {
+                    "producto": "Smoothie",
+                    "descripcion": "Pregunta por sabores.",
+                    "precio": 75
+                },
+                {
+                    "producto": "Té frío",
+                    "descripcion": "",
+                    "precio": 89
+                },
+                {
+                    "producto": "Coca Cola / Peñafiel",
+                    "descripcion": "Refrescos sabores.",
+                    "precio": 39
+                },
+                {
+                    "producto": "Agua mineral",
+                    "descripcion": "",
+                    "precio": 25
+                },
+                {
+                    "producto": "Clericot",
+                    "descripcion": "",
+                    "precio": 209
+                }
+            ]
+        }
+    ]
+}
