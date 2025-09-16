@@ -31,6 +31,7 @@
                     <li><a class="hover:text-moli-yellow transition" href="#historia">Nuestra Historia</a></li>
                     <li><a class="hover:text-moli-yellow transition" href="#menu">Menú</a></li>
                     <li><a class="hover:text-moli-yellow transition" href="#ubicacion">Ubicación</a></li>
+                    <li><a class="hover:text-moli-yellow transition" href="#reseñas">Reseñas</a></li>
                     <li><a class="hover:text-moli-yellow transition" href="#redes">Redes</a></li>
                 </ul>
 
@@ -54,6 +55,8 @@
                     </li>
                     <li><a class="block text-white hover:text-moli-yellow transition py-2 text-lg"
                             href="#ubicacion">Ubicación</a></li>
+                    <li><a class="block text-white hover:text-moli-yellow transition py-2 text-lg"
+                            href="#reseñas">Reseñas</a></li>
                     <li><a class="block text-white hover:text-moli-yellow transition py-2 text-lg"
                             href="#redes">Redes</a></li>
                 </ul>
@@ -325,6 +328,22 @@
         </div>
     </section>
 
+    {{-- ? Reseñas --}}
+    <section id="reseñas" class="moli-section border-t border-[#262020]/10 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="mb-10 text-center" data-reveal data-anim="fade-up">
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl moli-title-black mb-4" style="font-family: 'Amatic SC', cursive;">Lo que dicen nuestros clientes</h2>
+                <p class="text-[#262020]/70 text-lg">Experiencias reales de quienes nos visitan</p>
+            </div>
+            
+            <div class="flex justify-center" data-reveal data-anim="zoom-in">
+                <!-- Elfsight Google Reviews | Untitled Google Reviews -->
+                <script src="https://elfsightcdn.com/platform.js" async></script>
+                <div class="elfsight-app-6071a388-b66a-45d6-bbf0-1ed973b10d63" data-elfsight-app-lazy></div>
+            </div>
+        </div>
+    </section>
+
     {{-- ? Redes Sociales  --}}
     <section id="redes" class="moli-section border-t border-[#262020]/10 bg-white section-decorative">
         <!-- Elementos decorativos con iconos de café -->
@@ -424,6 +443,7 @@
                     <a href="#historia" class="hover:text-white transition">Historia</a>
                     <a href="#menu" class="hover:text-white transition">Menú</a>
                     <a href="#ubicacion" class="hover:text-white transition">Ubicación</a>
+                    <a href="#reseñas" class="hover:text-white transition">Reseñas</a>
                     <a href="#redes" class="hover:text-white transition">Redes</a>
                 </nav>
             </div>
