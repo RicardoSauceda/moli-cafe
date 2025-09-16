@@ -143,7 +143,7 @@
                 <!-- Fila 1, Columna 2: Imagen Historia -->
                 <div data-reveal data-anim="from-right" class="relative px-4 sm:px-6 md:px-8 order-2">
                     <div class="w-full max-w-sm sm:max-w-md lg:max-w-lg mx-auto overflow-hidden rounded-3xl shadow-xl border-4 border-moli-yellow/20">
-                        <img src="{{ asset('img/cafe-banner-wob.png') }}" 
+                        <img src="{{ asset('img/moli-owners.jpg') }}" 
                              alt="Interior acogedor de MoLi Café" 
                              class="w-full h-48 sm:h-56 md:h-64 lg:h-72 xl:h-80 object-cover transform hover:scale-105 transition-transform duration-500"
                              style="filter: sepia(0.2) saturate(1.1) brightness(1.1);">
@@ -153,7 +153,7 @@
                 <!-- Fila 2, Columna 1: Imagen Misión -->
                 <div data-reveal data-anim="from-left" class="relative px-4 sm:px-6 md:px-8 order-4 md:order-3">
                     <div class="w-full max-w-sm sm:max-w-md lg:max-w-lg mx-auto overflow-hidden rounded-3xl shadow-xl border-4 border-moli-yellow/20">
-                        <img src="{{ asset('img/coffee-banner-2.png') }}" 
+                        <img src="{{ asset('img/moli-mision.jpg') }}" 
                              alt="Café artesanal de MoLi Café" 
                              class="w-full h-48 sm:h-56 md:h-64 lg:h-72 xl:h-80 object-cover transform hover:scale-105 transition-transform duration-500"
                              style="filter: sepia(0.3) saturate(0.9) brightness(1.2) contrast(1.1);">
@@ -188,300 +188,66 @@
             <div class="overflow-x-auto scrollbar-hide" data-reveal data-anim="from-right">
                 <div
                     class="tabs-track relative flex gap-1 sm:gap-2 border-b border-[#262020]/10 pb-3 min-w-full scrollbar-hide">
-                    <button class="tab-btn active flex-shrink-0" data-tab-target="bebidas">
-                        <i class="fas fa-glass-water"></i>
-                        <span class="tab-btn-text sm:inline ml-1 sm:ml-2">Bebidas</span>
-                    </button>
-                    <button class="tab-btn flex-shrink-0" data-tab-target="botanas">
-                        <i class="fas fa-cookie-bite"></i>
-                        <span class="tab-btn-text sm:inline ml-1 sm:ml-2">Botanas</span>
-                    </button>
-                    <button class="tab-btn flex-shrink-0" data-tab-target="cafes">
-                        <i class="fas fa-mug-hot"></i>
-                        <span class="tab-btn-text sm:inline ml-1 sm:ml-2">Cafés</span>
-                    </button>
-                    <button class="tab-btn flex-shrink-0" data-tab-target="crepas">
-                        <i class="fas fa-layer-group"></i>
-                        <span class="tab-btn-text sm:inline ml-1 sm:ml-2">Crepas</span>
-                    </button>
-                    <button class="tab-btn flex-shrink-0" data-tab-target="frappes">
-                        <i class="fas fa-blender"></i>
-                        <span class="tab-btn-text sm:inline ml-1 sm:ml-2">Frappes</span>
-                    </button>
-                    <button class="tab-btn flex-shrink-0" data-tab-target="hamburguesas">
-                        <i class="fas fa-hamburger"></i>
-                        <span class="tab-btn-text sm:inline ml-1 sm:ml-2">Hamburguesas</span>
-                    </button>
-                    <button class="tab-btn flex-shrink-0" data-tab-target="pizzas">
-                        <i class="fas fa-pizza-slice"></i>
-                        <span class="tab-btn-text sm:inline ml-1 sm:ml-2">Pizzas</span>
-                    </button>
-                    <button class="tab-btn flex-shrink-0" data-tab-target="promociones">
-                        <i class="fas fa-tags"></i>
-                        <span class="tab-btn-text sm:inline ml-1 sm:ml-2">Promociones</span>
-                    </button>
-                    <button class="tab-btn flex-shrink-0" data-tab-target="sandwiches">
-                        <i class="fas fa-bread-slice"></i>
-                        <span class="tab-btn-text sm:inline ml-1 sm:ml-2">Sandwiches</span>
-                    </button>
+                    @php
+                        $categoryIcons = [
+                            'Bebidas Frías' => 'fas fa-glass-water',
+                            'Bebidas Calientes' => 'fas fa-mug-hot',
+                            'Pa\' Compartir' => 'fas fa-cookie-bite',
+                            'Crepas Saladas' => 'fas fa-layer-group',
+                            'Crepas Dulces' => 'fas fa-layer-group',
+                            'Chapatas y Hamburguesas' => 'fas fa-hamburger',
+                            'Pizzas' => 'fas fa-pizza-slice',
+                            'Postres' => 'fas fa-birthday-cake',
+                            'default' => 'fas fa-utensils'
+                        ];
+                    @endphp
+                    @foreach($categories as $index => $category)
+                        <button class="tab-btn {{ $index === 0 ? 'active' : '' }} flex-shrink-0" data-tab-target="category-{{ $category->id }}">
+                            <i class="{{ $categoryIcons[$category->name] ?? $categoryIcons['default'] }}"></i>
+                            <span class="tab-btn-text sm:inline ml-1 sm:ml-2">{{ $category->name }}</span>
+                        </button>
+                    @endforeach
                     <span class="tab-indicator" aria-hidden="true"></span>
                 </div>
             </div>
 
             <!-- Panels -->
             <div class="mt-8">
-                <!-- Bebidas -->
-                <div class="tab-panel" data-tab-panel="bebidas" data-reveal data-anim="fade-up">
-                    <h3 class="panel-title text-neutral-300">Bebidas</h3>
-                    <div
-                        class="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
-                        <div class="menu-card">
-                            <img src="https://images.unsplash.com/photo-1561043433-aaf687c4cf4e?q=80&w=800&auto=format&fit=crop"
-                                alt="Limonada con hierbabuena" class="menu-img">
-                            <div class="menu-info">
-                                <h4>Limonada con hierbabuena</h4>
+                @foreach($categories as $index => $category)
+                    <div class="tab-panel {{ $index === 0 ? '' : 'hidden' }}" data-tab-panel="category-{{ $category->id }}" data-reveal data-anim="fade-up">
+                        <h3 class="panel-title text-neutral-300">{{ $category->name }}</h3>
+                        @if($category->products->count() > 0)
+                            <div class="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
+                                @foreach($category->products as $product)
+                                    <div class="menu-card">
+                                        @if($product->image_path)
+                                            <img src="{{ Storage::url($product->image_path) }}" 
+                                                 alt="{{ $product->product_name }}" 
+                                                 class="menu-img">
+                                        @else
+                                            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=800&auto=format&fit=crop" 
+                                                 alt="{{ $product->product_name }}" 
+                                                 class="menu-img">
+                                        @endif
+                                        <div class="menu-info">
+                                            <h4>{{ $product->product_name }}</h4>
+                                            @if($product->description)
+                                                <p class="text-sm text-gray-300 mt-1">{{ Str::limit($product->description, 60) }}</p>
+                                            @endif
+                                            @if($product->price)
+                                                <p class="text-moli-yellow font-semibold mt-2">${{ number_format($product->price, 0) }}</p>
+                                            @endif
+                                        </div>
+                                    </div>
+                                @endforeach
                             </div>
-                        </div>
-                        <div class="menu-card">
-                            <img src="https://images.unsplash.com/photo-1517705008128-361805f42e86?q=80&w=800&auto=format&fit=crop"
-                                alt="Té chai especiado" class="menu-img">
-                            <div class="menu-info">
-                                <h4>Té chai especiado</h4>
+                        @else
+                            <div class="text-center py-8">
+                                <p class="text-gray-400">No hay productos disponibles en esta categoría</p>
                             </div>
-                        </div>
-                        <div class="menu-card">
-                            <img src="https://images.unsplash.com/photo-1481391319762-47c0d7bc80a8?q=80&w=800&auto=format&fit=crop"
-                                alt="Chocolate caliente artesanal" class="menu-img">
-                            <div class="menu-info">
-                                <h4>Chocolate caliente artesanal</h4>
-                            </div>
-                        </div>
+                        @endif
                     </div>
-                </div>
-
-                <!-- Botanas -->
-                <div class="tab-panel hidden" data-tab-panel="botanas" data-reveal data-anim="fade-up">
-                    <h3 class="panel-title">Botanas</h3>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                        <div class="menu-card"><img
-                                src="https://images.unsplash.com/photo-1604909052743-89b61b6c07f2?q=80&w=800&auto=format&fit=crop"
-                                alt="Nachos clásicos" class="menu-img">
-                            <div class="menu-info">
-                                <h4>Nachos clásicos</h4>
-                            </div>
-                        </div>
-                        <div class="menu-card"><img
-                                src="https://images.unsplash.com/photo-1604908177251-f8b23dfc3b39?q=80&w=800&auto=format&fit=crop"
-                                alt="Papas gajo con paprika" class="menu-img">
-                            <div class="menu-info">
-                                <h4>Papas gajo con paprika</h4>
-                            </div>
-                        </div>
-                        <div class="menu-card"><img
-                                src="https://images.unsplash.com/photo-1592329427707-6492b97e52d7?q=80&w=800&auto=format&fit=crop"
-                                alt="Dedos de queso" class="menu-img">
-                            <div class="menu-info">
-                                <h4>Dedos de queso</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Cafés -->
-                <div class="tab-panel hidden" data-tab-panel="cafes" data-reveal data-anim="fade-up">
-                    <h3 class="panel-title">Cafés</h3>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                        <div class="menu-card"><img
-                                src="https://images.unsplash.com/photo-1512568400610-62da28bc8a13?q=80&w=800&auto=format&fit=crop"
-                                alt="Espresso" class="menu-img">
-                            <div class="menu-info">
-                                <h4>Espresso</h4>
-                            </div>
-                        </div>
-                        <div class="menu-card"><img
-                                src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?q=80&w=800&auto=format&fit=crop"
-                                alt="Latte" class="menu-img">
-                            <div class="menu-info">
-                                <h4>Latte</h4>
-                            </div>
-                        </div>
-                        <div class="menu-card"><img
-                                src="https://images.unsplash.com/photo-1432107294469-414527cb5c65?q=80&w=800&auto=format&fit=crop"
-                                alt="Cappuccino" class="menu-img">
-                            <div class="menu-info">
-                                <h4>Cappuccino</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Crepas -->
-                <div class="tab-panel hidden" data-tab-panel="crepas" data-reveal data-anim="fade-up">
-                    <h3 class="panel-title">Crepas</h3>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                        <div class="menu-card"><img
-                                src="https://images.unsplash.com/photo-1572571702210-7719c3e0046e?q=80&w=800&auto=format&fit=crop"
-                                alt="Crepa de Nutella y fresas" class="menu-img">
-                            <div class="menu-info">
-                                <h4>Nutella y fresas</h4>
-                            </div>
-                        </div>
-                        <div class="menu-card"><img
-                                src="https://images.unsplash.com/photo-1558457655-b4e1d94847a2?q=80&w=800&auto=format&fit=crop"
-                                alt="Crepa de cajeta y nuez" class="menu-img">
-                            <div class="menu-info">
-                                <h4>Cajeta y nuez</h4>
-                            </div>
-                        </div>
-                        <div class="menu-card"><img
-                                src="https://images.unsplash.com/photo-1589308078059-be1415eab4c3?q=80&w=800&auto=format&fit=crop"
-                                alt="Crepa de jamón y queso" class="menu-img">
-                            <div class="menu-info">
-                                <h4>Jamón y queso</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Frappes y Smoothies -->
-                <div class="tab-panel hidden" data-tab-panel="frappes" data-reveal data-anim="fade-up">
-                    <h3 class="panel-title">Frappes y Smoothies</h3>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                        <div class="menu-card"><img
-                                src="https://images.unsplash.com/photo-1511920170033-f8396924c348?q=80&w=800&auto=format&fit=crop"
-                                alt="Frappe de caramelo" class="menu-img">
-                            <div class="menu-info">
-                                <h4>Frappe de caramelo</h4>
-                            </div>
-                        </div>
-                        <div class="menu-card"><img
-                                src="https://images.unsplash.com/photo-1515542706656-8e6ef17a1521?q=80&w=800&auto=format&fit=crop"
-                                alt="Smoothie de frutos rojos" class="menu-img">
-                            <div class="menu-info">
-                                <h4>Smoothie frutos rojos</h4>
-                            </div>
-                        </div>
-                        <div class="menu-card"><img
-                                src="https://images.unsplash.com/photo-1526312426976-593c6c1d3ab6?q=80&w=800&auto=format&fit=crop"
-                                alt="Smoothie tropical" class="menu-img">
-                            <div class="menu-info">
-                                <h4>Smoothie tropical</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Hamburguesas -->
-                <div class="tab-panel hidden" data-tab-panel="hamburguesas" data-reveal data-anim="fade-up">
-                    <h3 class="panel-title">Hamburguesas</h3>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                        <div class="menu-card"><img
-                                src="https://images.unsplash.com/photo-1550547660-d9450f859349?q=80&w=800&auto=format&fit=crop"
-                                alt="Hamburguesa clásica con queso" class="menu-img">
-                            <div class="menu-info">
-                                <h4>Clásica con queso</h4>
-                            </div>
-                        </div>
-                        <div class="menu-card"><img
-                                src="https://images.unsplash.com/photo-1553979459-d2229ba7433b?q=80&w=800&auto=format&fit=crop"
-                                alt="Hamburguesa BBQ con tocino" class="menu-img">
-                            <div class="menu-info">
-                                <h4>BBQ con tocino</h4>
-                            </div>
-                        </div>
-                        <div class="menu-card"><img
-                                src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop"
-                                alt="Hamburguesa portobello" class="menu-img">
-                            <div class="menu-info">
-                                <h4>Portobello</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Pizzas -->
-                <div class="tab-panel hidden" data-tab-panel="pizzas" data-reveal data-anim="fade-up">
-                    <h3 class="panel-title">Pizzas</h3>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                        <div class="menu-card"><img
-                                src="https://images.unsplash.com/photo-1541744572-9f5a19d2804a?q=80&w=800&auto=format&fit=crop"
-                                alt="Pizza Margarita" class="menu-img">
-                            <div class="menu-info">
-                                <h4>Margarita</h4>
-                            </div>
-                        </div>
-                        <div class="menu-card"><img
-                                src="https://images.unsplash.com/photo-1548365328-9f547fb0953b?q=80&w=800&auto=format&fit=crop"
-                                alt="Pizza peperoni" class="menu-img">
-                            <div class="menu-info">
-                                <h4>Peperoni</h4>
-                            </div>
-                        </div>
-                        <div class="menu-card"><img
-                                src="https://images.unsplash.com/photo-1548366086-7c1b1d5b95a1?q=80&w=800&auto=format&fit=crop"
-                                alt="Pizza cuatro quesos" class="menu-img">
-                            <div class="menu-info">
-                                <h4>Cuatro quesos</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Promociones -->
-                <div class="tab-panel hidden" data-tab-panel="promociones" data-reveal data-anim="fade-up">
-                    <h3 class="panel-title">Promociones</h3>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                        <div class="menu-card"><img
-                                src="https://images.unsplash.com/photo-1518756131217-31eb79b20e8f?q=80&w=800&auto=format&fit=crop"
-                                alt="Promociones" class="menu-img">
-                            <div class="menu-info">
-                                <h4>2x1 en café americano (martes)</h4>
-                            </div>
-                        </div>
-                        <div class="menu-card"><img
-                                src="https://images.unsplash.com/photo-1488477304112-4944851de03d?q=80&w=800&auto=format&fit=crop"
-                                alt="Combo crepa + bebida" class="menu-img">
-                            <div class="menu-info">
-                                <h4>Combo crepa + bebida</h4>
-                            </div>
-                        </div>
-                        <div class="menu-card"><img
-                                src="https://images.unsplash.com/photo-1484980859177-5ac1249fda6f?q=80&w=800&auto=format&fit=crop"
-                                alt="Descuento estudiante" class="menu-img">
-                            <div class="menu-info">
-                                <h4>Descuento estudiante</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Sandwiches -->
-                <div class="tab-panel hidden" data-tab-panel="sandwiches" data-reveal data-anim="fade-up">
-                    <h3 class="panel-title">Sandwiches</h3>
-                    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-                        <div class="menu-card"><img
-                                src="https://images.unsplash.com/photo-1540189549336-e6e99c3679fe?q=80&w=800&auto=format&fit=crop"
-                                alt="Sandwich jamón y queso" class="menu-img">
-                            <div class="menu-info">
-                                <h4>Jamón y queso</h4>
-                            </div>
-                        </div>
-                        <div class="menu-card"><img
-                                src="https://images.unsplash.com/photo-1551024601-bec78aea704b?q=80&w=800&auto=format&fit=crop"
-                                alt="Sandwich pollo a la parrilla" class="menu-img">
-                            <div class="menu-info">
-                                <h4>Pollo a la parrilla</h4>
-                            </div>
-                        </div>
-                        <div class="menu-card"><img
-                                src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=800&auto=format&fit=crop"
-                                alt="Sandwich vegetariano" class="menu-img">
-                            <div class="menu-info">
-                                <h4>Vegetariano</h4>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
             </div>
                             
             <!-- Botón Menú Completo -->
@@ -606,7 +372,7 @@
         </div>
     </section>
 
-    <!-- Footer -->
+    {{-- ? Footer --}}
     <footer class="border-t border-[#fff000]/10 bg-[#262020] text-[#fff000]">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12 lg:py-16">
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10">

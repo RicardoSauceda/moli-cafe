@@ -7,10 +7,9 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\MenuOptionController;
+use App\Http\Controllers\LandingController;
 
-Route::get('/', function () {
-    return view('landing');
-});
+Route::get('/', [LandingController::class, 'index'])->name('landing');
 
 // Rutas de autenticación
 Route::middleware('guest')->group(function () {

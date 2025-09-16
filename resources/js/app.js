@@ -50,6 +50,7 @@ document.querySelectorAll('[data-reveal]').forEach((el) => {
 // Tabs del menú
 function setupTabs() {
 	const track = document.querySelector('.tabs-track');
+	const scrollContainer = track ? track.closest('.overflow-x-auto') : null;
 	const indicator = track ? track.querySelector('.tab-indicator') : null;
 	const btns = Array.from(document.querySelectorAll('.tab-btn'));
 	const panels = Array.from(document.querySelectorAll('.tab-panel'));
@@ -64,6 +65,44 @@ function setupTabs() {
 		indicator.style.width = `${btnRect.width}px`;
 	}
 
+	function scrollToButton(btn) {
+		if (!btn || !scrollContainer) return;
+		
+		const containerRect = scrollContainer.getBoundingClientRect();
+		const btnRect = btn.getBoundingClientRect();
+		
+		// Calcular posiciones relativas
+		const btnLeft = btnRect.left - containerRect.left + scrollContainer.scrollLeft;
+		const btnRight = btnLeft + btnRect.width;
+		const containerWidth = containerRect.width;
+		
+		// Margen más amplio para mejor visibilidad
+		const margin = Math.min(containerWidth * 0.25, 100); // 25% del ancho o máximo 100px
+		
+		// Determinar si necesita scroll
+		let scrollTo = scrollContainer.scrollLeft;
+		
+		// Si el botón está fuera del lado derecho o muy cerca del borde
+		if (btnRight > scrollContainer.scrollLeft + containerWidth - margin) {
+			scrollTo = btnRight - containerWidth + margin * 1.5;
+		}
+		// Si el botón está fuera del lado izquierdo o muy cerca del borde
+		else if (btnLeft < scrollContainer.scrollLeft + margin) {
+			scrollTo = btnLeft - margin * 1.5;
+		}
+		
+		// Asegurar que no se pase de los límites
+		scrollTo = Math.max(0, Math.min(scrollTo, scrollContainer.scrollWidth - containerWidth));
+		
+		// Hacer scroll suave si es necesario
+		if (Math.abs(scrollTo - scrollContainer.scrollLeft) > 5) {
+			scrollContainer.scrollTo({
+				left: scrollTo,
+				behavior: 'smooth'
+			});
+		}
+	}
+
 	function activate(name) {
 		let activeBtn = null;
 		btns.forEach((b) => {
@@ -75,7 +114,11 @@ function setupTabs() {
 			const show = p.dataset.tabPanel === name;
 			p.classList.toggle('hidden', !show);
 		});
-		moveIndicator(activeBtn);
+		
+		if (activeBtn) {
+			scrollToButton(activeBtn);
+			moveIndicator(activeBtn);
+		}
 	}
 
 	btns.forEach((b) => {
@@ -88,7 +131,10 @@ function setupTabs() {
 
 	window.addEventListener('resize', () => {
 		const current = btns.find((b) => b.classList.contains('active'));
-		moveIndicator(current);
+		if (current) {
+			scrollToButton(current);
+			moveIndicator(current);
+		}
 	});
 }
 
