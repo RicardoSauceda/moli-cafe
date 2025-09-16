@@ -23,15 +23,19 @@
                         <div class="mt-2 grid grid-cols-[3fr_1fr] gap-2">
                             <a href="{{ route('categories.edit', $c) }}"
                                class="inline-flex items-center gap-1.5 rounded-lg bg-moli-yellow text-moli-black font-semibold px-3 py-2 text-sm border border-yellow-300 shadow-sm hover:brightness-95 focus:outline-none focus:ring-4 focus:ring-yellow-300/50">
-                                <span aria-hidden="true">✏️</span>
+                                <span aria-hidden="true">
+                                    <i class="fas fa-edit text-moli-black"></i>
+                                </span>
                                 <span>Editar</span>
                             </a>
-                            <form method="POST" action="{{ route('categories.destroy', $c) }}" onsubmit="return confirm('¿Eliminar categoría? Esta acción no se puede deshacer.');">
+                            <form class="flex justify-end" method="POST" action="{{ route('categories.destroy', $c) }}" onsubmit="return confirm('¿Eliminar categoría? Esta acción no se puede deshacer.');">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" title="Eliminar" aria-label="Eliminar"
                                         class="inline-flex items-center justify-center rounded-lg bg-red-50 text-red-700 border border-red-200 hover:bg-red-100 px-3 py-2 text-sm">
-                                    🗑️
+                                    <span aria-hidden="true">
+                                        <i class="fas fa-trash-alt text-red-700"></i>
+                                    </span>
                                 </button>
                             </form>
                         </div>

@@ -5,6 +5,8 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\MenuOptionController;
 
 Route::get('/', function () {
     return view('landing');
@@ -39,4 +41,17 @@ Route::middleware('auth')->group(function () {
     Route::get('/products/{product}/edit', [ProductController::class, 'edit'])->name('products.edit');
     Route::put('/products/{product}', [ProductController::class, 'update'])->name('products.update');
     Route::delete('/products/{product}', [ProductController::class, 'destroy'])->name('products.destroy');
+
+    // Opciones del Menú (listar y editar)
+    Route::get('/menu-options', [MenuOptionController::class, 'index'])->name('menu-options.index');
+    Route::get('/menu-options/{menuOption}/edit', [MenuOptionController::class, 'edit'])->name('menu-options.edit');
+    Route::put('/menu-options/{menuOption}', [MenuOptionController::class, 'update'])->name('menu-options.update');
+
+    // Usuarios (CRUD básico)
+    Route::get('/users', [UserController::class, 'index'])->name('users.index');
+    Route::get('/users/create', [UserController::class, 'create'])->name('users.create');
+    Route::post('/users', [UserController::class, 'store'])->name('users.store');
+    Route::get('/users/{user}/edit', [UserController::class, 'edit'])->name('users.edit');
+    Route::put('/users/{user}', [UserController::class, 'update'])->name('users.update');
+    Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('users.destroy');
 });

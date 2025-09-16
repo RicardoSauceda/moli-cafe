@@ -20,10 +20,10 @@
         <nav class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-[4.5rem]">
                 <a href="#banner" class="flex items-center gap-2 group">
-                    <span
-                        class="inline-flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-full bg-moli-yellow text-moli-black font-extrabold text-sm sm:text-base">M</span>
-                    <span class="text-lg sm:text-xl lg:text-2xl font-extrabold tracking-wide text-moli-yellow"
-                        style="font-family: 'Amatic SC', cursive;">MoLi Café</span>
+                    <span class="inline-flex items-center justify-center w-15 h-15 sm:w-15 sm:h-15 rounded-full bg-moli-yellow text-moli-black font-extrabold text-sm sm:text-base overflow-hidden">
+                        <img src="{{ asset('img/moli-logo.png') }}" alt="MoLi Café" class="w-full h-full object-cover">
+                    </span>
+                    <span class="text-lg sm:text-xl lg:text-2xl font-extrabold tracking-wide text-moli-yellow" style="font-family: 'Amatic SC', cursive;">MoLi Café</span>
                 </a>
 
                 {{-- Desktop Menu --}}
