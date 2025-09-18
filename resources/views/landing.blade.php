@@ -146,7 +146,7 @@
                 <!-- Fila 1, Columna 2: Imagen Historia -->
                 <div data-reveal data-anim="from-right" class="relative px-4 sm:px-6 md:px-8 order-2">
                     <div class="w-full max-w-sm sm:max-w-md lg:max-w-lg mx-auto overflow-hidden rounded-3xl shadow-xl border-4 border-moli-yellow/20">
-                        <img src="{{ asset('img/moli-owners.jpg') }}" 
+                        <img src="{{ asset('img/moli-owners.jpeg') }}" 
                              alt="Interior acogedor de MoLi Café" 
                              class="w-full h-48 sm:h-56 md:h-64 lg:h-72 xl:h-80 object-cover transform hover:scale-105 transition-transform duration-500"
                              style="filter: sepia(0.2) saturate(1.1) brightness(1.1);">
