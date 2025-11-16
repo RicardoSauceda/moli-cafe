@@ -32,7 +32,7 @@
                     <li><a class="hover:text-moli-yellow transition" href="#menu">Menú</a></li>
                     <li><a class="hover:text-moli-yellow transition" href="#ubicacion">Ubicación</a></li>
                     <li><a class="hover:text-moli-yellow transition" href="#reseñas">Reseñas</a></li>
-                    <li><a class="hover:text-moli-yellow transition" href="#redes">Redes</a></li>
+                    <li><a class="hover:text-moli-yellow transition" href="#contactanos">Contactanos</a></li>
                 </ul>
 
                 {{-- Mobile Menu Button --}}
@@ -58,7 +58,7 @@
                     <li><a class="block text-white hover:text-moli-yellow transition py-2 text-lg"
                             href="#reseñas">Reseñas</a></li>
                     <li><a class="block text-white hover:text-moli-yellow transition py-2 text-lg"
-                            href="#redes">Redes</a></li>
+                            href="#contactanos">Contactanos</a></li>
                 </ul>
             </div>
         </nav>
@@ -343,10 +343,10 @@
         </div>
     </section>
 
-    {{-- ? Redes Sociales  --}}
-    <section id="redes" class="moli-section border-t border-[#262020]/10 bg-white section-decorative">
+    {{-- ? Redes Sociales Seccion "Contactanos"  --}}
+    <section id="contactanos" class="moli-section border-t border-[#262020]/10 bg-white section-decorative">
         <!-- Elementos decorativos con iconos de café -->
-        <div class="redes-decorations">
+        <div class="contactanos-decorations">
             <i class="fas fa-star coffee-icon-decoration extra-large star" style="--rotation: 15deg;"></i>
             <i class="fas fa-mug-hot coffee-icon-decoration medium mug" style="--rotation: -25deg;"></i>
             <i class="fas fa-leaf coffee-icon-decoration large leaf" style="--rotation: 10deg;"></i>
@@ -368,7 +368,7 @@
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
             <div data-reveal data-anim="fade-up">
                 <h2 class="text-2xl sm:text-3xl lg:text-4xl moli-title mb-4 lg:mb-6"
-                    style="font-family: 'Amatic SC', cursive;">Síguenos</h2>
+                    style="font-family: 'Amatic SC', cursive;">Contactanos</h2>
                 <p class="text-[#262020]/70 mb-6 lg:mb-10 text-sm sm:text-base">Conoce nuestras novedades y promociones
                 </p>
             </div>
@@ -429,8 +429,8 @@
                         <a href="#ubicacion"
                             class="px-4 py-2 rounded-full border border-[#fff000] text-[#fff000] text-center hover:bg-[#fff000]/10 transition">Cómo
                             llegar</a>
-                        <a href="#redes"
-                            class="px-4 py-2 rounded-full border border-[#fff000] text-[#fff000] text-center hover:bg-[#fff000]/10 transition">Síguenos</a>
+                        <a href="#contactanos"
+                            class="px-4 py-2 rounded-full border border-[#fff000] text-[#fff000] text-center hover:bg-[#fff000]/10 transition">Contactanos</a>
                     </div>
                 </div>
             </div>
@@ -443,7 +443,7 @@
                     <a href="#menu" class="hover:text-white transition">Menú</a>
                     <a href="#ubicacion" class="hover:text-white transition">Ubicación</a>
                     <a href="#reseñas" class="hover:text-white transition">Reseñas</a>
-                    <a href="#redes" class="hover:text-white transition">Redes</a>
+                    <a href="#contactanos" class="hover:text-white transition">Contactanos</a>
                 </nav>
             </div>
         </div>

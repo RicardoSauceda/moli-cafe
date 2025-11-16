@@ -610,71 +610,71 @@
     transform: rotate(-20deg);
 }
 
-/* Elementos específicos para redes sociales */
-.redes-decorations .coffee-icon-decoration:nth-child(1) {
+/* Elementos específicos para contactanos */
+.contactanos-decorations .coffee-icon-decoration:nth-child(1) {
     top: 18%;
     left: 12%;
     animation-delay: 1s;
     transform: rotate(15deg);
 }
 
-.redes-decorations .coffee-icon-decoration:nth-child(2) {
+.contactanos-decorations .coffee-icon-decoration:nth-child(2) {
     top: 12%;
     right: 18%;
     animation-delay: 3s;
     transform: rotate(-25deg);
 }
 
-.redes-decorations .coffee-icon-decoration:nth-child(3) {
+.contactanos-decorations .coffee-icon-decoration:nth-child(3) {
     bottom: 22%;
     left: 6%;
     animation-delay: 5s;
     transform: rotate(10deg);
 }
 
-.redes-decorations .coffee-icon-decoration:nth-child(4) {
+.contactanos-decorations .coffee-icon-decoration:nth-child(4) {
     bottom: 18%;
     right: 10%;
     animation-delay: 7s;
     transform: rotate(-20deg);
 }
 
-.redes-decorations .coffee-icon-decoration:nth-child(5) {
+.contactanos-decorations .coffee-icon-decoration:nth-child(5) {
     top: 35%;
     left: 25%;
     animation-delay: 2s;
     transform: rotate(30deg);
 }
 
-.redes-decorations .coffee-icon-decoration:nth-child(6) {
+.contactanos-decorations .coffee-icon-decoration:nth-child(6) {
     top: 8%;
     left: 35%;
     animation-delay: 4s;
     transform: rotate(-15deg);
 }
 
-.redes-decorations .coffee-icon-decoration:nth-child(7) {
+.contactanos-decorations .coffee-icon-decoration:nth-child(7) {
     bottom: 35%;
     right: 25%;
     animation-delay: 6s;
     transform: rotate(20deg);
 }
 
-.redes-decorations .coffee-icon-decoration:nth-child(8) {
+.contactanos-decorations .coffee-icon-decoration:nth-child(8) {
     bottom: 8%;
     left: 30%;
     animation-delay: 8s;
     transform: rotate(-35deg);
 }
 
-.redes-decorations .coffee-icon-decoration:nth-child(9) {
+.contactanos-decorations .coffee-icon-decoration:nth-child(9) {
     top: 50%;
     right: 5%;
     animation-delay: 1.5s;
     transform: rotate(25deg);
 }
 
-.redes-decorations .coffee-icon-decoration:nth-child(10) {
+.contactanos-decorations .coffee-icon-decoration:nth-child(10) {
     bottom: 50%;
     left: 40%;
     animation-delay: 3.5s;
