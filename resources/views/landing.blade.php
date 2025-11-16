@@ -95,10 +95,9 @@
                 </div>
                 <div class="relative px-2 sm:px-4 md:px-6 lg:px-8 xl:px-12" data-reveal data-anim="zoom-in">
                     <div class="w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl mx-auto overflow-hidden rounded-full border-4 border-orange-100">
-                        <img src="{{ asset('img/coffee-banner-2.png') }}"
+                        <img src="{{ asset('img/moli-logo.png') }}"
                             alt="MoLi Café - Chalkboard hipster cozy style"
-                            class="w-full h-full object-cover transform rotate-[10deg]"
-                            style="filter: sepia(0.5) saturate(0.7) brightness(1.3) contrast(0.3) hue-rotate(30deg);">
+                            class="w-full h-full object-cover transform rotate-[10deg]">
                     </div>
                 </div>
             </div>
