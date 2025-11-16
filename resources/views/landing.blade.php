@@ -171,8 +171,22 @@
                         con
                         amor y dedicación, creando un espacio donde las personas se sientan como en casa
                         Compartiendo nuestra pasión por el buen café y el servicio honesto, ofreciendo un lugar donde la
-                        comunidad pueda disfrutar, conectar y sentirse bienvenida
+                        comunidad pueda disfrutar, conectar y sentirse bienvenida
                     </p>
+                    <div data-reveal data-anim="fade-up" class="mt-5">
+                    <h3 class="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl moli-title-black mb-3 sm:mb-4 lg:mb-4" style="font-family: 'Amatic SC', cursive;">Visión</h3>
+                        <div class="space-y-3 sm:space-y-4 text-xs sm:text-sm md:text-base lg:text-lg text-[#262020]/90 leading-relaxed max-w-3xl mx-auto">
+                            <p>
+                                Ser reconocidos como la cafetería favorita, un lugar donde cada cliente encuentre calidad, calidez y momentos memorables.
+                            </p>
+                            <p>
+                                Convirtiéndonos en un referente de café y hospitalidad, creciendo de manera sostenible sin perder la esencia familiar que nos caracteriza.
+                            </p>
+                            <p>
+                                Con este haciéndonos perdurar en el tiempo como un símbolo de amor, esfuerzo y dedicación, inspirando a futuras generaciones a soñar y construir con pasión.
+                            </p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -182,8 +196,22 @@
     <section id="menu" class="moli-section border-t border-[#262020]/10 bg-zinc-900">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="mb-10" data-reveal data-anim="fade-up">
-                <h2 class="text-4xl moli-title" style="font-family: 'Amatic SC', cursive;">Menú</h2>
-                <p class="text-neutral-300 mt-2">Explora nuestras categorías</p>
+                <div class="flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <div>
+                        <h2 class="text-4xl moli-title" style="font-family: 'Amatic SC', cursive;">Menú</h2>
+                        <p class="text-neutral-300 mt-2">Explora nuestras categorías</p>
+                    </div>
+                    <!-- Selector de Moneda -->
+                    <div class="flex items-center gap-2 bg-[#262020]/30 rounded-full px-4 py-2">
+                        <span class="text-neutral-300 text-sm font-medium">Moneda:</span>
+                        <button id="currency-mxn" class="currency-btn active px-3 py-1 rounded-full text-sm font-semibold transition">
+                            MXN $
+                        </button>
+                        <button id="currency-usd" class="currency-btn px-3 py-1 rounded-full text-sm font-semibold transition">
+                            USD $
+                        </button>
+                    </div>
+                </div>
             </div>
 
             <!-- Tabs -->
@@ -237,7 +265,9 @@
                                                 <p class="text-sm text-gray-300 mt-1">{{ Str::limit($product->description, 60) }}</p>
                                             @endif
                                             @if($product->price)
-                                                <p class="text-moli-yellow font-semibold mt-2">${{ number_format($product->price, 0) }}</p>
+                                                <p class="product-price text-moli-yellow font-semibold mt-2" data-price-mxn="{{ $product->price }}">
+                                                    <span class="currency-symbol">$</span><span class="price-value">{{ number_format($product->price, 0) }}</span> <span class="currency-code">MXN</span>
+                                                </p>
                                             @endif
                                         </div>
                                     </div>
@@ -374,18 +404,26 @@
             </div>
             <div class="flex flex-col sm:flex-row items-center justify-center gap-3 sm:gap-4 lg:gap-6 max-w-md sm:max-w-none mx-auto"
                 data-reveal data-anim="fade-up">
-                <a href="#"
+                <a href="https://www.facebook.com/cafemoli" target="_blank" rel="noopener noreferrer"
                     class="px-6 py-3 rounded-full border-2 border-[#262020] text-[#262020] hover:bg-[#262020]/5 transition w-full sm:w-auto text-sm sm:text-base font-medium">
                     <i class="fab fa-facebook mr-2"></i>Facebook
                 </a>
-                <a href="#"
+                <a href="https://www.instagram.com/mo.licafe/" target="_blank" rel="noopener noreferrer"
                     class="px-6 py-3 rounded-full border-2 border-[#262020] text-[#262020] hover:bg-[#262020]/5 transition w-full sm:w-auto text-sm sm:text-base font-medium">
                     <i class="fab fa-instagram mr-2"></i>Instagram
                 </a>
-                <span
+                <a href="https://www.tiktok.com/@moli_cafe" target="_blank" rel="noopener noreferrer"
+                    class="px-6 py-3 rounded-full border-2 border-[#262020] text-[#262020] hover:bg-[#262020]/5 transition w-full sm:w-auto text-sm sm:text-base font-medium">
+                    <i class="fab fa-tiktok mr-2"></i>TikTok
+                </a>
+                <a href="https://www.ubereats.com/store/moli-cafe-moli-cafe/yxUtmGKWU8WF7ZHxKEBXpQ?diningMode=DELIVERY" target="_blank" rel="noopener noreferrer"
+                    class="px-6 py-3 rounded-full border-2 border-[#262020] text-[#262020] hover:bg-[#262020]/5 transition w-full sm:w-auto text-sm sm:text-base font-medium">
+                    <i class="fab fa-uber mr-2"></i>Uber Eats
+                </a>
+                {{-- <span
                     class="px-6 py-3 rounded-full border border-[#262020]/20 text-[#262020]/60 w-full sm:w-auto text-sm sm:text-base">
                     <i class="fab fa-x-twitter mr-2"></i>X (Próximamente)
-                </span>
+                </span> --}}
             </div>
         </div>
     </section>
@@ -453,6 +491,65 @@
 
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Currency Converter with Real-Time Exchange Rate
+        let exchangeRate = 20; // Valor por defecto
+        let currentCurrency = 'MXN';
+
+        const currencyButtons = document.querySelectorAll('.currency-btn');
+        const prices = document.querySelectorAll('.product-price');
+
+        // Fetch real-time exchange rate from API
+        async function fetchExchangeRate() {
+            try {
+                // Usando exchangerate-api.com (gratuita, sin API key necesaria)
+                const response = await fetch('https://open.exchangerate-api.com/v6/latest/MXN');
+                const data = await response.json();
+                
+                if (data && data.rates && data.rates.USD) {
+                    exchangeRate = 1 / data.rates.USD; // Convertir de MXN a USD
+                    console.log(`Tipo de cambio actualizado: 1 USD = ${exchangeRate.toFixed(2)} MXN`);
+                }
+            } catch (error) {
+                console.warn('No se pudo obtener el tipo de cambio. Usando valor por defecto:', exchangeRate);
+                // Alternativa: API de Banco de México (requiere más configuración)
+                // https://www.banxico.org.mx/SieAPIRest/service/v1/series/SF43718/datos/oportuno
+            }
+        }
+
+        function updatePrices(currency) {
+            prices.forEach(priceElement => {
+                const priceMXN = parseFloat(priceElement.dataset.priceMxn);
+                const priceValue = priceElement.querySelector('.price-value');
+                const currencyCode = priceElement.querySelector('.currency-code');
+
+                if (currency === 'USD') {
+                    const priceUSD = priceMXN / exchangeRate;
+                    priceValue.textContent = priceUSD.toFixed(2);
+                    currencyCode.textContent = 'USD';
+                } else {
+                    priceValue.textContent = new Intl.NumberFormat('es-MX').format(priceMXN);
+                    currencyCode.textContent = 'MXN';
+                }
+            });
+        }
+
+        currencyButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                currencyButtons.forEach(btn => btn.classList.remove('active'));
+                
+                // Add active class to clicked button
+                button.classList.add('active');
+
+                // Update currency
+                currentCurrency = button.id === 'currency-usd' ? 'USD' : 'MXN';
+                updatePrices(currentCurrency);
+            });
+        });
+
+        // Fetch exchange rate on page load
+        fetchExchangeRate();
     </script>
 </body>
 

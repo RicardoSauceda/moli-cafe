@@ -23,13 +23,13 @@
             </div>
             <div class="flex items-center gap-2">
                 @auth
-                    <span class="bg-gray-100 border border-gray-200 rounded-full px-3 py-1 text-sm">{{ auth()->user()->name }}</span>
+                    <span class="bg-black text-white border border-gray-200 rounded-full px-3 py-1 text-sm">{{ auth()->user()->name }}</span>
                     <form method="POST" action="{{ route('logout') }}">
                         @csrf
                         <button class="inline-flex items-center rounded-lg bg-gray-900 text-white font-semibold px-3 py-2 text-sm border border-gray-900 shadow-sm hover:brightness-110 focus:outline-none focus:ring-4 focus:ring-gray-900/20" type="submit">Cerrar sesión</button>
                     </form>
                 @endauth
-                @guest
+                @guest 
                     <a class="inline-flex items-center rounded-lg bg-gray-900 text-white font-semibold px-3 py-2 text-sm border border-gray-900 shadow-sm hover:brightness-110 focus:outline-none focus:ring-4 focus:ring-gray-900/20" href="{{ route('login') }}">Iniciar sesión</a>
                 @endguest
             </div>

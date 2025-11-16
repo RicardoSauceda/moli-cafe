@@ -212,6 +212,26 @@
     color: #262020;
 }
 
+/* Selector de Moneda */
+.currency-btn {
+    background: transparent;
+    color: #d4d4d4;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.currency-btn:hover {
+    background: rgba(255, 240, 0, 0.1);
+    color: #fff000;
+    border-color: #fff000;
+}
+
+.currency-btn.active {
+    background: linear-gradient(180deg, #fff000, #e6d700);
+    color: #262020;
+    border-color: #fff000;
+    box-shadow: 0 4px 12px rgba(255, 240, 0, 0.3);
+}
+
 /* ==== RESPONSIVE DESIGN ==== */
 
 /* Mobile First - Dispositivos muy pequeños (< 480px) */
