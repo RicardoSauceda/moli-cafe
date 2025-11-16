@@ -15,8 +15,8 @@
 <body class="bg-white text-moli-black antialiased">
     <header class="sticky top-0 z-40 bg-white/85 backdrop-blur border-b border-gray-200">
         <nav class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between gap-3">
-            <a href="/" class="font-extrabold tracking-tight text-moli-black">MoLi Café</a>
-            <div class="hidden sm:flex items-center gap-4 text-sm font-medium text-gray-800">
+            <a href="/" class="font-extrabold tracking-tight">MoLi Café</a>
+            <div class="hidden sm:flex items-center gap-4 text-sm font-medium">
                 <a class="hover:text-moli-yellow" href="{{ route('dashboard') }}">Dashboard</a>
                 <a class="hover:text-moli-yellow" href="{{ route('categories.index') }}">Categorías</a>
                 <a class="hover:text-moli-yellow" href="{{ route('products.index') }}">Productos</a>
