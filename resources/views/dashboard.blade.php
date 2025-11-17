@@ -28,6 +28,17 @@
             </div>
         </div>
 
+        <div class="rounded-2xl border border-gray-200 bg-white shadow-sm p-4">
+            <h2 class="text-lg font-semibold">Promociones</h2>
+            <p class="text-gray-600">Agrega y administra las promociones de tu landing page.</p>
+            <div class="mt-3 flex flex-wrap gap-2">
+                <a class="inline-flex items-center rounded-xl bg-moli-yellow text-moli-black font-bold px-4 py-2 border border-yellow-300 shadow-sm hover:brightness-95 focus:outline-none focus:ring-4 focus:ring-yellow-300/50"
+                    href="{{ route('promotions.index') }}">Ver promociones</a>
+                <a class="inline-flex items-center rounded-xl bg-gray-900 text-white font-semibold px-4 py-2 border border-gray-900 shadow-sm hover:brightness-110 focus:outline-none focus:ring-4 focus:ring-gray-900/20"
+                    href="{{ route('promotions.create') }}">Nueva promoción</a>
+            </div>
+        </div>
+
         {{-- Configuración y Usuarios --}}
         <div class="rounded-2xl border border-gray-200 bg-white shadow-sm p-4">
             <h2 class="text-lg font-semibold">Configuración — Opciones del menú</h2>

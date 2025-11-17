@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\Promotion;
 use Illuminate\Http\Request;
 
 class LandingController extends Controller
@@ -15,6 +16,9 @@ class LandingController extends Controller
             $query->where('available', true);
         }])->get();
 
-        return view('landing', compact('categories'));
+        // Obtener promociones activas y vigentes
+        $promotions = Promotion::active()->valid()->orderBy('position', 'asc')->get();
+
+        return view('landing', compact('categories', 'promotions'));
     }
 }

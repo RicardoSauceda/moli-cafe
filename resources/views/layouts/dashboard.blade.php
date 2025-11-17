@@ -20,6 +20,7 @@
                 <a class="hover:text-moli-yellow" href="{{ route('dashboard') }}">Dashboard</a>
                 <a class="hover:text-moli-yellow" href="{{ route('categories.index') }}">Categorías</a>
                 <a class="hover:text-moli-yellow" href="{{ route('products.index') }}">Productos</a>
+                <a class="hover:text-moli-yellow" href="{{ route('promotions.index') }}">Promociones</a>
             </div>
             <div class="flex items-center gap-2">
                 @auth

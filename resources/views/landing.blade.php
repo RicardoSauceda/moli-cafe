@@ -11,6 +11,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
     @vite(['resources/css/app.css','resources/css/landing.css','resources/js/app.js'])
 </head>
 
@@ -28,6 +30,7 @@
 
                 {{-- Desktop Menu --}}
                 <ul class="hidden md:flex items-end gap-4 lg:gap-6 text-white font-semibold text-sm lg:text-base">
+                    <li><a class="hover:text-moli-yellow transition" href="#promociones">Promociones</a></li>
                     <li><a class="hover:text-moli-yellow transition" href="#historia">Nuestra Historia</a></li>
                     <li><a class="hover:text-moli-yellow transition" href="#menu">Menú</a></li>
                     <li><a class="hover:text-moli-yellow transition" href="#ubicacion">Ubicación</a></li>
@@ -49,6 +52,8 @@
             <div class="md:hidden absolute top-full left-0 w-full bg-[#262020]/95 backdrop-blur-md border-t border-moli-yellow/20 hidden"
                 id="mobile-menu">
                 <ul class="px-4 py-6 space-y-4">
+                    <li><a class="block text-white hover:text-moli-yellow transition py-2 text-lg"
+                            href="#promociones">Promociones</a></li>
                     <li><a class="block text-white hover:text-moli-yellow transition py-2 text-lg"
                             href="#historia">Nuestra Historia</a></li>
                     <li><a class="block text-white hover:text-moli-yellow transition py-2 text-lg" href="#menu">Menú</a>
@@ -101,6 +106,62 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    {{-- ? Promociones Slider --}}
+    <section id="promociones" class="moli-section border-t border-[#262020]/10 bg-white">
+        <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+            <!-- Encabezado -->
+            <div class="mb-8 lg:mb-12 text-center" data-reveal data-anim="fade-up">
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl moli-title-black mb-3 lg:mb-4" style="font-family: 'Amatic SC', cursive;">
+                    Promociones Especiales
+                </h2>
+                <p class="text-[#262020]/70 text-base sm:text-lg">Ofertas exclusivas que no te puedes perder</p>
+            </div>
+
+            <!-- Slider de Promociones -->
+            @if($promotions->count() > 0)
+                <div class="swiper promotions-swiper" data-reveal data-anim="zoom-in">
+                    <div class="swiper-wrapper">
+                        @foreach($promotions as $promotion)
+                            <div class="swiper-slide">
+                                <div class="promo-card">
+                                    <div class="promo-image-container">
+                                        @if($promotion->image_path)
+                                            <img src="{{ Storage::url($promotion->image_path) }}" 
+                                                 alt="{{ $promotion->title }}" 
+                                                 class="promo-image">
+                                        @else
+                                            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=800&auto=format&fit=crop" 
+                                                 alt="{{ $promotion->title }}" 
+                                                 class="promo-image">
+                                        @endif
+                                        <div class="promo-badge">{{ $promotion->getDiscountBadge() }}</div>
+                                    </div>
+                                    <div class="promo-content">
+                                        <h3 class="promo-title">{{ $promotion->title }}</h3>
+                                        <p class="promo-description">{{ $promotion->description }}</p>
+                                        <p class="promo-validity">{{ $promotion->getValidityText() }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
+                    </div>
+
+                    <!-- Navegación -->
+                    <div class="swiper-button-prev promo-button-prev"></div>
+                    <div class="swiper-button-next promo-button-next"></div>
+
+                    <!-- Paginación -->
+                    <div class="swiper-pagination promo-pagination"></div>
+                </div>
+            @else
+                <div class="text-center py-12 bg-gray-50 rounded-lg border-2 border-dashed border-gray-300">
+                    <i class="fas fa-tags text-4xl text-gray-400 mb-4"></i>
+                    <p class="text-gray-600 text-lg">No hay promociones activas en este momento</p>
+                </div>
+            @endif
         </div>
     </section>
 
@@ -477,6 +538,7 @@
                 <p class="text-center sm:text-left">© <span id="year"></span> MoLi Café. Todos los derechos reservados.
                 </p>
                 <nav class="flex items-center gap-3 sm:gap-4 text-center">
+                    <a href="#promociones" class="hover:text-white transition">Promociones</a>
                     <a href="#historia" class="hover:text-white transition">Historia</a>
                     <a href="#menu" class="hover:text-white transition">Menú</a>
                     <a href="#ubicacion" class="hover:text-white transition">Ubicación</a>
@@ -489,8 +551,47 @@
 
     <!-- Estilos movidos a resources/css/landing.css -->
 
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
     <script>
         document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Inicializar Swiper para promociones
+        const promotionsSwiper = new Swiper('.promotions-swiper', {
+            slidesPerView: 1,
+            spaceBetween: 20,
+            navigation: {
+                nextEl: '.promo-button-next',
+                prevEl: '.promo-button-prev',
+            },
+            pagination: {
+                el: '.promo-pagination',
+                clickable: true,
+                dynamicBullets: true,
+            },
+            breakpoints: {
+                480: {
+                    slidesPerView: 1.2,
+                    spaceBetween: 16,
+                },
+                768: {
+                    slidesPerView: 2,
+                    spaceBetween: 20,
+                },
+                1024: {
+                    slidesPerView: 2.5,
+                    spaceBetween: 24,
+                },
+            },
+            autoplay: {
+                delay: 5000,
+                disableOnInteraction: false,
+            },
+            loop: true,
+            grabCursor: true,
+            freeMode: false,
+        });
 
         // Currency Converter with Real-Time Exchange Rate
         let exchangeRate = 20; // Valor por defecto
