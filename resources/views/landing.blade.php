@@ -159,7 +159,7 @@
             @else
                 <div class="text-center py-12 bg-gray-50 rounded-lg border-2 border-dashed border-gray-300">
                     <i class="fas fa-tags text-4xl text-gray-400 mb-4"></i>
-                    <p class="text-gray-600 text-lg">No hay promociones activas en este momento</p>
+                    <p class="text-gray-600 text-4xl " style="font-family: 'Amatic SC', cursive;">¡Espera nuestras promociones pronto!</p>
                 </div>
             @endif
         </div>
