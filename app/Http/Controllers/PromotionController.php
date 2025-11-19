@@ -54,8 +54,9 @@ class PromotionController extends Controller
         }
 
         // Establecer posición por defecto
-        if (!$validated['position']) {
-            $validated['position'] = Promotion::max('position') + 1 ?? 0;
+        if (empty($validated['position'])) {
+            $maxPosition = Promotion::max('position');
+            $validated['position'] = ($maxPosition ?? -1) + 1;
         }
 
         Promotion::create($validated);
@@ -101,6 +102,12 @@ class PromotionController extends Controller
 
             $imagePath = $request->file('image_path')->store('promotions', 'public');
             $validated['image_path'] = $imagePath;
+        }
+
+        // Establecer posición por defecto si está vacía
+        if (empty($validated['position'])) {
+            $maxPosition = Promotion::max('position');
+            $validated['position'] = ($maxPosition ?? -1) + 1;
         }
 
         $promotion->update($validated);
