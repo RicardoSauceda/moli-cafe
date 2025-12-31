@@ -369,8 +369,8 @@
 
             <!-- Botón Menú Completo -->
             <div class="mt-12 text-center" data-reveal data-anim="zoom-in">
-                <a href="#" class="menu-pdf-btn"
-                    onclick="alert('El menú completo en PDF estará disponible próximamente'); return false;">
+                <a href="{{ asset('menu/MoLi%20Cafe%20-%20Menu%20PDF.pdf') }}" target="_blank" class="menu-pdf-btn"
+                    rel="noopener noreferrer" class="btn">
                     <i class="fas fa-file-pdf"></i>
                     <span>Ver Menú Completo</span>
                 </a>

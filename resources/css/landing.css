@@ -15,6 +15,8 @@
 
 .promotions-swiper {
     padding-bottom: 3rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
 }
 
 .swiper-slide {
@@ -45,7 +47,7 @@
     position: relative;
     width: 100%;
     overflow: hidden;
-    height: 200px;
+    height: 240px;
     background: linear-gradient(135deg, #f5deb3, #deb887);
 }
 
@@ -171,11 +173,11 @@
 }
 
 .promo-button-prev {
-    left: -10px;
+    left: 10px;
 }
 
 .promo-button-next {
-    right: -10px;
+    right: 10px;
 }
 
 /* Paginación personalizada */
@@ -208,7 +210,7 @@
     }
 
     .promo-image-container {
-        height: 180px;
+        height: 200px;
     }
 
     .promo-content {
@@ -242,17 +244,22 @@
     }
 
     .promo-button-prev {
-        left: -5px;
+        left: 5px;
     }
 
     .promo-button-next {
-        right: -5px;
+        right: 5px;
+    }
+
+    .promotions-swiper {
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
     }
 }
 
 @media (min-width: 480px) and (max-width: 767px) {
     .promo-image-container {
-        height: 190px;
+        height: 220px;
     }
 
     .promo-content {
@@ -270,7 +277,7 @@
 
 @media (min-width: 768px) {
     .promo-image-container {
-        height: 220px;
+        height: 260px;
     }
 
     .promo-content {
@@ -284,6 +291,7 @@
 
 /* Reducir animaciones si el usuario lo prefiere */
 @media (prefers-reduced-motion: reduce) {
+
     .promo-card,
     .promo-image,
     .promo-btn,
@@ -295,12 +303,15 @@
 
 /* Ocultar barra de scroll horizontal */
 .scrollbar-hide {
-    -ms-overflow-style: none;  /* IE y Edge */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;
+    /* IE y Edge */
+    scrollbar-width: none;
+    /* Firefox */
 }
 
 .scrollbar-hide::-webkit-scrollbar {
-    display: none;  /* Chrome, Safari y Opera */
+    display: none;
+    /* Chrome, Safari y Opera */
 }
 
 /* Animaciones controladas por data-anim */
@@ -338,12 +349,15 @@
     scroll-snap-type: x mandatory;
     position: relative;
     /* Ocultar scrollbars */
-    -ms-overflow-style: none;  /* IE y Edge */
-    scrollbar-width: none;  /* Firefox */
+    -ms-overflow-style: none;
+    /* IE y Edge */
+    scrollbar-width: none;
+    /* Firefox */
 }
 
 .tabs-track::-webkit-scrollbar {
-    display: none;  /* Chrome, Safari y Opera */
+    display: none;
+    /* Chrome, Safari y Opera */
 }
 
 .tab-indicator {
@@ -400,20 +414,25 @@
 .menu-card {
     background: #1a1a1a;
     border-color: rgba(255, 255, 255, 0.1);
-    border: 0.1px solid #708090; /* Gris pizarra */
+    border: 0.1px solid #708090;
+    /* Gris pizarra */
     border-radius: 1rem;
     overflow: hidden;
     /* background: #ffffff; */
     box-shadow: 0 4px 8px rgba(112, 128, 144, 0.2);
     transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
-    margin: 0 auto; /* Centrar las tarjetas */
-    max-width: 100%; /* Asegurar que no excedan el contenedor */
+    margin: 0 auto;
+    /* Centrar las tarjetas */
+    max-width: 100%;
+    /* Asegurar que no excedan el contenedor */
+    min-height: 280px;
 }
 
 .menu-card:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 20px rgba(112, 128, 144, 0.3);
-    border-color: #5f6a7a; /* Gris pizarra más oscuro en hover */
+    border-color: #5f6a7a;
+    /* Gris pizarra más oscuro en hover */
 }
 
 .menu-img {
@@ -424,8 +443,9 @@
 }
 
 .menu-info {
-    padding: .75rem 1rem;
-    text-align: center; /* Centrar el texto */
+    padding: 1rem 1.25rem;
+    text-align: center;
+    /* Centrar el texto */
 }
 
 .menu-info h4 {
@@ -438,13 +458,16 @@
 
 /* Centrado de grids del menú */
 .tab-panel .grid {
-    justify-items: center; /* Centra los elementos de la grid */
-    place-items: center; /* Centrado adicional */
+    justify-items: center;
+    /* Centra los elementos de la grid */
+    place-items: center;
+    /* Centrado adicional */
 }
 
 /* Estilos adicionales para el contenedor de tabs */
 .tabs-track.overflow-x-auto {
-    -webkit-overflow-scrolling: touch; /* Scroll suave en iOS */
+    -webkit-overflow-scrolling: touch;
+    /* Scroll suave en iOS */
 }
 
 /* Botón de menú completo */
@@ -520,12 +543,13 @@
 
 /* Mobile First - Dispositivos muy pequeños (< 480px) */
 @media (max-width: 479px) {
+
     /* Banner responsive */
     .banner-image {
         height: 250px !important;
         transform: rotate(3deg) scale(1.05) !important;
     }
-    
+
     /* Títulos más pequeños en móvil */
     .moli-title {
         font-size: 1.8rem !important;
@@ -578,7 +602,7 @@
     }
 
     /* Better spacing for mobile */
-    #historia .space-y-3 > * + * {
+    #historia .space-y-3>*+* {
         margin-top: 0.75rem !important;
     }
 
@@ -592,7 +616,7 @@
     #historia [data-anim="from-right"].in {
         transform: none !important;
     }
-    
+
     /* Pestañas del menú en móvil */
     .tab-btn {
         padding: 0.4rem 0.75rem;
@@ -600,7 +624,7 @@
         min-width: 100px;
         border-radius: 8px;
     }
-    
+
     .tab-btn i {
         font-size: 0.7rem;
         margin-right: 0.25rem !important;
@@ -610,19 +634,19 @@
     .tab-btn-text {
         display: none;
     }
-    
+
     /* Tarjetas del menú más compactas */
     .menu-img {
-        height: clamp(120px, 25vw, 160px);
+        height: 180px;
     }
-    
+
     .menu-info {
-        padding: 0.5rem 0.75rem;
+        padding: 0.75rem 1rem;
     }
-    
+
     .menu-info h4 {
-        font-size: 0.875rem;
-        line-height: 1.2;
+        font-size: 0.95rem;
+        line-height: 1.3;
     }
 
     /* Menu grid responsive */
@@ -639,8 +663,13 @@
 
     /* All menu grids responsive */
     .tab-panel .grid {
-        grid-template-columns: repeat(1, 1fr) !important;
-        gap: 0.75rem !important;
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 1rem !important;
+    }
+
+    /* Mejor espaciado para cards muy pequeñas */
+    .menu-card {
+        min-height: 260px;
     }
 
     /* Show text on larger mobile screens */
@@ -655,13 +684,13 @@
         height: 350px !important;
         transform: rotate(7deg) scale(1.08) !important;
     }
-    
+
     .tab-btn {
         padding: 0.45rem 0.85rem;
         font-size: 0.9rem;
         min-width: 110px;
     }
-    
+
     .menu-img {
         height: clamp(140px, 20vw, 180px);
     }
@@ -679,7 +708,8 @@
     }
 
     /* Historia section for medium mobile */
-    #historia h2, #historia h3 {
+    #historia h2,
+    #historia h3 {
         font-size: 1.75rem !important;
     }
 
@@ -694,12 +724,12 @@
         height: 400px !important;
         transform: rotate(8deg) scale(1.1) !important;
     }
-    
+
     /* Ajustar grid en tablets */
     .tablet-grid-adjust {
         grid-template-columns: repeat(2, 1fr) !important;
     }
-    
+
     /* Pestañas más espaciadas */
     .tab-btn {
         padding: 0.5rem 1rem;
@@ -718,7 +748,8 @@
         display: inline !important;
     }
 
-    #historia h2, #historia h3 {
+    #historia h2,
+    #historia h3 {
         font-size: 2rem !important;
     }
 
@@ -739,7 +770,7 @@
     .banner-image {
         height: 500px !important;
     }
-    
+
     /* Contenedores más amplios */
     .max-w-8xl {
         max-width: 96rem;
@@ -751,7 +782,7 @@
     .banner-image {
         height: 250px !important;
     }
-    
+
     .min-h-screen {
         min-height: 100vh;
     }
@@ -759,12 +790,13 @@
 
 /* Preferencias de movimiento reducido */
 @media (prefers-reduced-motion: reduce) {
+
     .anim,
     .tab-btn,
     .menu-card {
         transition: none !important;
     }
-    
+
     .banner-image {
         transform: none !important;
     }
@@ -772,11 +804,12 @@
 
 /* Fix horizontal animations on mobile devices */
 @media (max-width: 767px) {
+
     .anim.from-left,
     .anim.from-right {
         transform: translateY(16px) !important;
     }
-    
+
     .anim.from-left.in,
     .anim.from-right.in {
         transform: none !important;
@@ -794,6 +827,7 @@
 
 /* Impresión */
 @media print {
+
     .banner-image,
     .tab-btn,
     .menu-card {
@@ -1015,31 +1049,39 @@
 
 /* Animaciones para iconos y decoraciones */
 @keyframes float-icon {
-    0%, 100% { 
-        transform: translateY(0px) rotate(var(--rotation, 0deg)); 
+
+    0%,
+    100% {
+        transform: translateY(0px) rotate(var(--rotation, 0deg));
         opacity: 0.08;
     }
-    25% { 
-        transform: translateY(-8px) rotate(calc(var(--rotation, 0deg) + 5deg)); 
+
+    25% {
+        transform: translateY(-8px) rotate(calc(var(--rotation, 0deg) + 5deg));
         opacity: 0.12;
     }
-    50% { 
-        transform: translateY(-15px) rotate(var(--rotation, 0deg)); 
+
+    50% {
+        transform: translateY(-15px) rotate(var(--rotation, 0deg));
         opacity: 0.06;
     }
-    75% { 
-        transform: translateY(-8px) rotate(calc(var(--rotation, 0deg) - 5deg)); 
+
+    75% {
+        transform: translateY(-8px) rotate(calc(var(--rotation, 0deg) - 5deg));
         opacity: 0.10;
     }
 }
 
 @keyframes pulse-decoration {
-    0%, 100% { 
-        opacity: 0.06; 
+
+    0%,
+    100% {
+        opacity: 0.06;
         transform: scale(1);
     }
-    50% { 
-        opacity: 0.08; 
+
+    50% {
+        opacity: 0.08;
         transform: scale(1.1);
     }
 }
@@ -1134,6 +1176,7 @@
 
 /* Reducir animaciones para preferencias de accesibilidad */
 @media (prefers-reduced-motion: reduce) {
+
     .coffee-icon-decoration,
     .abstract-decoration {
         animation: none !important;
@@ -1142,6 +1185,7 @@
 
 /* Ocultar decoraciones en impresión */
 @media print {
+
     .coffee-icon-decoration,
     .abstract-decoration {
         display: none !important;
@@ -1150,6 +1194,7 @@
 
 /* Mejoras de accesibilidad táctil */
 @media (hover: none) and (pointer: coarse) {
+
     /* Increase touch targets */
     .tab-btn {
         min-height: 44px;
