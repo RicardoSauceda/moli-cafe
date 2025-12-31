@@ -2,9 +2,34 @@
 <html lang="es">
 
 <head>
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>MoLi Café — All you need is coffee</title>
-    <meta name="description" content="MoLi Café — Chalkboard hipster cozy style. Buen café, buena vibra." />
+    <meta name="description" content="MoLi Café — Si es con amor, sabe mejor." />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="{{ asset('img/favicon_io/favicon.ico') }}">
+    <link rel="apple-touch-icon" sizes="180x180" href="{{ asset('img/favicon_io/apple-touch-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="32x32" href="{{ asset('img/favicon_io/favicon-32x32.png') }}">
+    <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('img/favicon_io/favicon-16x16.png') }}">
+    <link rel="manifest" href="{{ asset('img/favicon_io/site.webmanifest') }}">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="MoLi Café — All you need is coffee">
+    <meta property="og:description"
+        content="Buen café, buena vibra. Un espacio cozy para disfrutar bebidas, cafés, crepas y más. Si es con amor, sabe mejor.">
+    <meta property="og:image" content="{{ asset('img/Open Graph.png') }}">
+    <meta property="og:url" content="{{ url('/') }}">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="MoLi Café">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MoLi Café — All you need is coffee">
+    <meta name="twitter:description"
+        content="Buen café, buena vibra. Un espacio cozy para disfrutar bebidas, cafés, crepas y más.">
+    <meta name="twitter:image" content="{{ asset('img/Open Graph.png') }}">
+
     <!-- Fuente para estilo "chalkboard / cozy" -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -535,7 +560,7 @@
                         MoLi Café</h4>
                     <p class="text-xs sm:text-sm text-[#fff000]/80 leading-relaxed">Buen café, buena vibra. Un espacio
                         cozy para disfrutar bebidas,
-                        cafés, crepas y más con un estilo chalkboard hipster.</p>
+                        cafés, crepas y más.</p>
                 </div>
                 <div class="text-center sm:text-left">
                     <h5 class="text-lg sm:text-xl font-bold mb-3" style="font-family: 'Amatic SC', cursive;">Visítanos
