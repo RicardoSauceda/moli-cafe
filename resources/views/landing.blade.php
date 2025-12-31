@@ -8,12 +8,16 @@
     <!-- Fuente para estilo "chalkboard / cozy" -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Montserrat:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    @vite(['resources/css/app.css','resources/css/landing.css','resources/js/app.js'])
+    @vite(['resources/css/app.css', 'resources/css/landing.css', 'resources/js/app.js'])
 </head>
 
 <body class="min-h-screen bg-white text-moli-black antialiased selection:bg-moli-yellow selection:text-moli-black">
@@ -22,10 +26,12 @@
         <nav class="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-[4.5rem]">
                 <a href="#banner" class="flex items-center gap-2 group">
-                    <span class="inline-flex items-center justify-center w-15 h-15 sm:w-15 sm:h-15 rounded-full bg-moli-yellow text-moli-black font-extrabold text-sm sm:text-base overflow-hidden">
+                    <span
+                        class="inline-flex items-center justify-center w-15 h-15 sm:w-15 sm:h-15 rounded-full bg-moli-yellow text-moli-black font-extrabold text-sm sm:text-base overflow-hidden">
                         <img src="{{ asset('img/moli-logo.png') }}" alt="MoLi Café" class="w-full h-full object-cover">
                     </span>
-                    <span class="text-lg sm:text-xl lg:text-2xl font-extrabold tracking-wide text-moli-yellow" style="font-family: 'Amatic SC', cursive;">MoLi Café</span>
+                    <span class="text-lg sm:text-xl lg:text-2xl font-extrabold tracking-wide text-moli-yellow"
+                        style="font-family: 'Amatic SC', cursive;">MoLi Café</span>
                 </a>
 
                 {{-- Desktop Menu --}}
@@ -56,7 +62,8 @@
                             href="#promociones">Promociones</a></li>
                     <li><a class="block text-white hover:text-moli-yellow transition py-2 text-lg"
                             href="#historia">Nuestra Historia</a></li>
-                    <li><a class="block text-white hover:text-moli-yellow transition py-2 text-lg" href="#menu">Menú</a>
+                    <li><a class="block text-white hover:text-moli-yellow transition py-2 text-lg"
+                            href="#menu">Menú</a>
                     </li>
                     <li><a class="block text-white hover:text-moli-yellow transition py-2 text-lg"
                             href="#ubicacion">Ubicación</a></li>
@@ -99,9 +106,9 @@
                     </div>
                 </div>
                 <div class="relative px-2 sm:px-4 md:px-6 lg:px-8 xl:px-12" data-reveal data-anim="zoom-in">
-                    <div class="w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl mx-auto overflow-hidden rounded-full border-4 border-orange-100">
-                        <img src="{{ asset('img/moli-logo.png') }}"
-                            alt="MoLi Café - Chalkboard hipster cozy style"
+                    <div
+                        class="w-full max-w-sm sm:max-w-md md:max-w-lg lg:max-w-xl xl:max-w-2xl mx-auto overflow-hidden rounded-full border-4 border-orange-100">
+                        <img src="{{ asset('img/moli-logo.png') }}" alt="MoLi Café - Chalkboard hipster cozy style"
                             class="w-full h-full object-cover transform rotate-[10deg]">
                     </div>
                 </div>
@@ -114,28 +121,27 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Encabezado -->
             <div class="mb-8 lg:mb-12 text-center" data-reveal data-anim="fade-up">
-                <h2 class="text-3xl sm:text-4xl lg:text-5xl moli-title-black mb-3 lg:mb-4" style="font-family: 'Amatic SC', cursive;">
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl moli-title-black mb-3 lg:mb-4"
+                    style="font-family: 'Amatic SC', cursive;">
                     Promociones Especiales
                 </h2>
                 <p class="text-[#262020]/70 text-base sm:text-lg">Ofertas exclusivas que no te puedes perder</p>
             </div>
 
             <!-- Slider de Promociones -->
-            @if($promotions->count() > 0)
+            @if ($promotions->count() > 0)
                 <div class="swiper promotions-swiper" data-reveal data-anim="zoom-in">
                     <div class="swiper-wrapper">
-                        @foreach($promotions as $promotion)
+                        @foreach ($promotions as $promotion)
                             <div class="swiper-slide">
                                 <div class="promo-card">
                                     <div class="promo-image-container">
-                                        @if($promotion->image_path)
-                                            <img src="{{ Storage::url($promotion->image_path) }}" 
-                                                 alt="{{ $promotion->title }}" 
-                                                 class="promo-image">
+                                        @if ($promotion->image_path)
+                                            <img src="{{ Storage::url($promotion->image_path) }}"
+                                                alt="{{ $promotion->title }}" class="promo-image">
                                         @else
-                                            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=800&auto=format&fit=crop" 
-                                                 alt="{{ $promotion->title }}" 
-                                                 class="promo-image">
+                                            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=800&auto=format&fit=crop"
+                                                alt="{{ $promotion->title }}" class="promo-image">
                                         @endif
                                         <div class="promo-badge">{{ $promotion->getDiscountBadge() }}</div>
                                     </div>
@@ -159,7 +165,8 @@
             @else
                 <div class="text-center py-12 bg-gray-50 rounded-lg border-2 border-dashed border-gray-300">
                     <i class="fas fa-tags text-4xl text-gray-400 mb-4"></i>
-                    <p class="text-gray-600 text-4xl " style="font-family: 'Amatic SC', cursive;">¡Espera nuestras promociones pronto!</p>
+                    <p class="text-gray-600 text-4xl " style="font-family: 'Amatic SC', cursive;">¡Espera nuestras
+                        promociones pronto!</p>
                 </div>
             @endif
         </div>
@@ -170,56 +177,60 @@
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <!-- Grid principal 2x2 -->
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8 lg:gap-12 items-center">
-                
+
                 <!-- Fila 1, Columna 1: Nuestra Historia -->
                 <div data-reveal data-anim="from-left" class="text-center md:text-left order-1">
-                    <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl moli-title-black mb-3 sm:mb-4 lg:mb-6" style="font-family: 'Amatic SC', cursive;">Nuestra Historia</h2>
-                    <div class="space-y-3 sm:space-y-4 text-xs sm:text-sm md:text-base lg:text-lg text-[#262020]/90 leading-relaxed">
-                    <p>
-                        Hace 4 años, mi esposo y yo decidimos dar vida a un sueño: abrir una cafetería que reflejara
-                        nuestro
-                        amor por el buen café y el deseo de compartir momentos especiales con nuestra comunidad.
-                    </p>
-                    <p>
-                        Desde el
-                        primer día, pusimos todo nuestro corazón, esfuerzo y dedicación en cada detalle: desde la
-                        selección
-                        de los granos, hasta el ambiente cálido que invita a quedarse.
-                    </p>
-                    <p>
-                        Lo que comenzó como una idea llena de ilusión, hoy se ha convertido en un espacio donde las
-                        personas
-                        encuentran mucho más que una taza de café: encuentran un lugar para reunirse, disfrutar,
-                        trabajar o
-                        simplemente consentirse.
-                    </p>
-                    <p>
-                        Cada sonrisa de nuestros clientes nos recuerda por qué empezamos este proyecto: porque creemos
-                        que
-                        el café tiene el poder de unir, inspirar y crear recuerdos inolvidables. Nuestra cafetería no
-                        solo
-                        es un negocio, es la materialización de un sueño familiar construido con amor.
-                    </p>
-                </div>
+                    <h2 class="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl moli-title-black mb-3 sm:mb-4 lg:mb-6"
+                        style="font-family: 'Amatic SC', cursive;">Nuestra Historia</h2>
+                    <div class="space-y-3 sm:space-y-4 text-xs sm:text-sm md:text-base lg:text-lg text-[#262020]/90 leading-relaxed"
+                        style="font-family: 'Montserrat', sans-serif;">
+                        <p>
+                            Hace 4 años, mi esposo y yo decidimos dar vida a un sueño: abrir una cafetería que reflejara
+                            nuestro
+                            amor por el buen café y el deseo de compartir momentos especiales con nuestra comunidad.
+                        </p>
+                        <p>
+                            Desde el
+                            primer día, pusimos todo nuestro corazón, esfuerzo y dedicación en cada detalle: desde la
+                            selección
+                            de los granos, hasta el ambiente cálido que invita a quedarse.
+                        </p>
+                        <p>
+                            Lo que comenzó como una idea llena de ilusión, hoy se ha convertido en un espacio donde las
+                            personas
+                            encuentran mucho más que una taza de café: encuentran un lugar para reunirse, disfrutar,
+                            trabajar o
+                            simplemente consentirse.
+                        </p>
+                        <p>
+                            Cada sonrisa de nuestros clientes nos recuerda por qué empezamos este proyecto: porque
+                            creemos
+                            que
+                            el café tiene el poder de unir, inspirar y crear recuerdos inolvidables. Nuestra cafetería
+                            no
+                            solo
+                            es un negocio, es la materialización de un sueño familiar construido con amor.
+                        </p>
+                    </div>
                 </div>
 
                 <!-- Fila 1, Columna 2: Imagen Historia -->
                 <div data-reveal data-anim="from-right" class="relative px-4 sm:px-6 md:px-8 order-2">
-                    <div class="w-full max-w-sm sm:max-w-md lg:max-w-lg mx-auto overflow-hidden rounded-3xl shadow-xl border-4 border-moli-yellow/20">
-                        <img src="{{ asset('img/moli-owners.jpeg') }}" 
-                             alt="Interior acogedor de MoLi Café" 
-                             class="w-full h-48 sm:h-56 md:h-64 lg:h-72 xl:h-80 object-cover transform hover:scale-105 transition-transform duration-500"
-                             style="filter: sepia(0.2) saturate(1.1) brightness(1.1);">
+                    <div
+                        class="w-full max-w-sm sm:max-w-md lg:max-w-lg mx-auto overflow-hidden rounded-3xl shadow-xl border-4 border-moli-yellow/20">
+                        <img src="{{ asset('img/moli-owners.jpeg') }}" alt="Interior acogedor de MoLi Café"
+                            class="w-full h-48 sm:h-56 md:h-64 lg:h-72 xl:h-80 object-cover transform hover:scale-105 transition-transform duration-500"
+                            style="filter: sepia(0.2) saturate(1.1) brightness(1.1);">
                     </div>
                 </div>
 
                 <!-- Fila 2, Columna 1: Imagen Misión -->
                 <div data-reveal data-anim="from-left" class="relative px-4 sm:px-6 md:px-8 order-4 md:order-3">
-                    <div class="w-full max-w-sm sm:max-w-md lg:max-w-lg mx-auto overflow-hidden rounded-3xl shadow-xl border-4 border-moli-yellow/20">
-                        <img src="{{ asset('img/moli-mision.jpg') }}" 
-                             alt="Café artesanal de MoLi Café" 
-                             class="w-full h-48 sm:h-56 md:h-64 lg:h-72 xl:h-80 object-cover transform hover:scale-105 transition-transform duration-500"
-                             style="filter: sepia(0.3) saturate(0.9) brightness(1.2) contrast(1.1);">
+                    <div
+                        class="w-full max-w-sm sm:max-w-md lg:max-w-lg mx-auto overflow-hidden rounded-3xl shadow-xl border-4 border-moli-yellow/20">
+                        <img src="{{ asset('img/moli-mision.jpg') }}" alt="Café artesanal de MoLi Café"
+                            class="w-full h-48 sm:h-56 md:h-64 lg:h-72 xl:h-80 object-cover transform hover:scale-105 transition-transform duration-500"
+                            style="filter: sepia(0.3) saturate(0.9) brightness(1.2) contrast(1.1);">
                     </div>
                 </div>
 
@@ -227,7 +238,8 @@
                 <div data-reveal data-anim="from-right" class="text-center md:text-left order-3 md:order-4">
                     <h3 class="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl moli-title-black mb-3 sm:mb-4 lg:mb-6"
                         style="font-family: 'Amatic SC', cursive;">Misión</h3>
-                    <p class="text-[#262020]/90 leading-relaxed">
+                    <p class="text-[#262020]/90 leading-relaxed text-xs sm:text-sm md:text-base lg:text-lg"
+                        style="font-family: 'Montserrat', sans-serif;">
                         Brindar a cada cliente una experiencia cálida y acogedora a través de café de calidad, preparado
                         con
                         amor y dedicación, creando un espacio donde las personas se sientan como en casa
@@ -235,16 +247,21 @@
                         comunidad pueda disfrutar, conectar y sentirse bienvenida
                     </p>
                     <div data-reveal data-anim="fade-up" class="mt-5">
-                    <h3 class="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl moli-title-black mb-3 sm:mb-4 lg:mb-4" style="font-family: 'Amatic SC', cursive;">Visión</h3>
-                        <div class="space-y-3 sm:space-y-4 text-xs sm:text-sm md:text-base lg:text-lg text-[#262020]/90 leading-relaxed max-w-3xl mx-auto">
+                        <h3 class="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl moli-title-black mb-3 sm:mb-4 lg:mb-4"
+                            style="font-family: 'Amatic SC', cursive;">Visión</h3>
+                        <div class="space-y-3 sm:space-y-4 text-xs sm:text-sm md:text-base lg:text-lg text-[#262020]/90 leading-relaxed max-w-3xl mx-auto"
+                            style="font-family: 'Montserrat', sans-serif;">
                             <p>
-                                Ser reconocidos como la cafetería favorita, un lugar donde cada cliente encuentre calidad, calidez y momentos memorables.
+                                Ser reconocidos como la cafetería favorita, un lugar donde cada cliente encuentre
+                                calidad, calidez y momentos memorables.
                             </p>
                             <p>
-                                Convirtiéndonos en un referente de café y hospitalidad, creciendo de manera sostenible sin perder la esencia familiar que nos caracteriza.
+                                Convirtiéndonos en un referente de café y hospitalidad, creciendo de manera sostenible
+                                sin perder la esencia familiar que nos caracteriza.
                             </p>
                             <p>
-                                Con este haciéndonos perdurar en el tiempo como un símbolo de amor, esfuerzo y dedicación, inspirando a futuras generaciones a soñar y construir con pasión.
+                                Con este haciéndonos perdurar en el tiempo como un símbolo de amor, esfuerzo y
+                                dedicación, inspirando a futuras generaciones a soñar y construir con pasión.
                             </p>
                         </div>
                     </div>
@@ -265,10 +282,12 @@
                     <!-- Selector de Moneda -->
                     <div class="flex items-center gap-2 bg-[#262020]/30 rounded-full px-4 py-2">
                         <span class="text-neutral-300 text-sm font-medium">Moneda:</span>
-                        <button id="currency-mxn" class="currency-btn active px-3 py-1 rounded-full text-sm font-semibold transition">
+                        <button id="currency-mxn"
+                            class="currency-btn active px-3 py-1 rounded-full text-sm font-semibold transition">
                             MXN $
                         </button>
-                        <button id="currency-usd" class="currency-btn px-3 py-1 rounded-full text-sm font-semibold transition">
+                        <button id="currency-usd"
+                            class="currency-btn px-3 py-1 rounded-full text-sm font-semibold transition">
                             USD $
                         </button>
                     </div>
@@ -289,11 +308,12 @@
                             'Chapatas y Hamburguesas' => 'fas fa-hamburger',
                             'Pizzas' => 'fas fa-pizza-slice',
                             'Postres' => 'fas fa-birthday-cake',
-                            'default' => 'fas fa-utensils'
+                            'default' => 'fas fa-utensils',
                         ];
                     @endphp
-                    @foreach($categories as $index => $category)
-                        <button class="tab-btn {{ $index === 0 ? 'active' : '' }} flex-shrink-0" data-tab-target="category-{{ $category->id }}">
+                    @foreach ($categories as $index => $category)
+                        <button class="tab-btn {{ $index === 0 ? 'active' : '' }} flex-shrink-0"
+                            data-tab-target="category-{{ $category->id }}">
                             <i class="{{ $categoryIcons[$category->name] ?? $categoryIcons['default'] }}"></i>
                             <span class="tab-btn-text sm:inline ml-1 sm:ml-2">{{ $category->name }}</span>
                         </button>
@@ -304,30 +324,34 @@
 
             <!-- Panels -->
             <div class="mt-8">
-                @foreach($categories as $index => $category)
-                    <div class="tab-panel {{ $index === 0 ? '' : 'hidden' }}" data-tab-panel="category-{{ $category->id }}" data-reveal data-anim="fade-up">
+                @foreach ($categories as $index => $category)
+                    <div class="tab-panel {{ $index === 0 ? '' : 'hidden' }}"
+                        data-tab-panel="category-{{ $category->id }}" data-reveal data-anim="fade-up">
                         <h3 class="panel-title text-neutral-300">{{ $category->name }}</h3>
-                        @if($category->products->count() > 0)
-                            <div class="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
-                                @foreach($category->products as $product)
+                        @if ($category->products->count() > 0)
+                            <div
+                                class="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 lg:gap-6">
+                                @foreach ($category->products as $product)
                                     <div class="menu-card">
-                                        @if($product->image_path)
-                                            <img src="{{ Storage::url($product->image_path) }}" 
-                                                 alt="{{ $product->product_name }}" 
-                                                 class="menu-img">
+                                        @if ($product->image_path)
+                                            <img src="{{ Storage::url($product->image_path) }}"
+                                                alt="{{ $product->product_name }}" class="menu-img">
                                         @else
-                                            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=800&auto=format&fit=crop" 
-                                                 alt="{{ $product->product_name }}" 
-                                                 class="menu-img">
+                                            <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085?q=80&w=800&auto=format&fit=crop"
+                                                alt="{{ $product->product_name }}" class="menu-img">
                                         @endif
                                         <div class="menu-info">
                                             <h4>{{ $product->product_name }}</h4>
-                                            @if($product->description)
-                                                <p class="text-sm text-gray-300 mt-1">{{ Str::limit($product->description, 60) }}</p>
+                                            @if ($product->description)
+                                                <p class="text-sm text-gray-300 mt-1">
+                                                    {{ Str::limit($product->description, 60) }}</p>
                                             @endif
-                                            @if($product->price)
-                                                <p class="product-price text-moli-yellow font-semibold mt-2" data-price-mxn="{{ $product->price }}">
-                                                    <span class="currency-symbol">$</span><span class="price-value">{{ number_format($product->price, 0) }}</span> <span class="currency-code">MXN</span>
+                                            @if ($product->price)
+                                                <p class="product-price text-moli-yellow font-semibold mt-2"
+                                                    data-price-mxn="{{ $product->price }}">
+                                                    <span class="currency-symbol">$</span><span
+                                                        class="price-value">{{ number_format($product->price, 0) }}</span>
+                                                    <span class="currency-code">MXN</span>
                                                 </p>
                                             @endif
                                         </div>
@@ -342,10 +366,11 @@
                     </div>
                 @endforeach
             </div>
-                            
+
             <!-- Botón Menú Completo -->
             <div class="mt-12 text-center" data-reveal data-anim="zoom-in">
-                <a href="#" class="menu-pdf-btn" onclick="alert('El menú completo en PDF estará disponible próximamente'); return false;">
+                <a href="#" class="menu-pdf-btn"
+                    onclick="alert('El menú completo en PDF estará disponible próximamente'); return false;">
                     <i class="fas fa-file-pdf"></i>
                     <span>Ver Menú Completo</span>
                 </a>
@@ -371,9 +396,13 @@
         <!-- Formas abstractas -->
         <div class="abstract-decoration circle-1"></div>
         <div class="abstract-decoration circle-2"></div>
-        <div class="abstract-decoration" style="width: 60px; height: 60px; top: 30%; right: 30%; background: radial-gradient(circle at 50% 50%, #f5deb3, transparent 60%); animation-delay: 4s;"></div>
-        <div class="abstract-decoration" style="width: 100px; height: 80px; bottom: 40%; left: 35%; background: linear-gradient(60deg, #deb887, transparent 70%); border-radius: 60%; animation-delay: 8s;"></div>
-        
+        <div class="abstract-decoration"
+            style="width: 60px; height: 60px; top: 30%; right: 30%; background: radial-gradient(circle at 50% 50%, #f5deb3, transparent 60%); animation-delay: 4s;">
+        </div>
+        <div class="abstract-decoration"
+            style="width: 100px; height: 80px; bottom: 40%; left: 35%; background: linear-gradient(60deg, #deb887, transparent 70%); border-radius: 60%; animation-delay: 8s;">
+        </div>
+
         <div
             class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-6 lg:gap-8 items-start lg:items-center relative z-10">
             <div data-reveal data-anim="from-left" class="text-center lg:text-left">
@@ -422,10 +451,11 @@
     <section id="reseñas" class="moli-section border-t border-[#262020]/10 bg-white">
         <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="mb-10 text-center" data-reveal data-anim="fade-up">
-                <h2 class="text-3xl sm:text-4xl lg:text-5xl moli-title-black mb-4" style="font-family: 'Amatic SC', cursive;">Lo que dicen nuestros clientes</h2>
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl moli-title-black mb-4"
+                    style="font-family: 'Amatic SC', cursive;">Lo que dicen nuestros clientes</h2>
                 <p class="text-[#262020]/70 text-lg">Experiencias reales de quienes nos visitan</p>
             </div>
-            
+
             <div class="flex justify-center" data-reveal data-anim="zoom-in">
                 <!-- Elfsight Google Reviews | Untitled Google Reviews -->
                 <script src="https://elfsightcdn.com/platform.js" async></script>
@@ -452,13 +482,19 @@
         <!-- Formas abstractas -->
         <div class="abstract-decoration circle-1" style="top: 15%; left: 8%;"></div>
         <div class="abstract-decoration circle-2" style="bottom: 15%; right: 8%;"></div>
-        <div class="abstract-decoration" style="width: 90px; height: 90px; top: 40%; right: 35%; background: conic-gradient(from 45deg, #f5deb3, transparent 180deg, #deb887); border-radius: 50%; animation-delay: 2s;"></div>
-        <div class="abstract-decoration" style="width: 70px; height: 50px; bottom: 35%; left: 25%; background: linear-gradient(-30deg, #d2b48c, transparent 60%); border-radius: 70% 30% 40% 60%; animation-delay: 6s;"></div>
-        <div class="abstract-decoration" style="width: 40px; height: 40px; top: 8%; right: 45%; background: radial-gradient(ellipse at center, #daa520, transparent 80%); animation-delay: 10s;"></div>
-        
+        <div class="abstract-decoration"
+            style="width: 90px; height: 90px; top: 40%; right: 35%; background: conic-gradient(from 45deg, #f5deb3, transparent 180deg, #deb887); border-radius: 50%; animation-delay: 2s;">
+        </div>
+        <div class="abstract-decoration"
+            style="width: 70px; height: 50px; bottom: 35%; left: 25%; background: linear-gradient(-30deg, #d2b48c, transparent 60%); border-radius: 70% 30% 40% 60%; animation-delay: 6s;">
+        </div>
+        <div class="abstract-decoration"
+            style="width: 40px; height: 40px; top: 8%; right: 45%; background: radial-gradient(ellipse at center, #daa520, transparent 80%); animation-delay: 10s;">
+        </div>
+
         <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative z-10">
             <div data-reveal data-anim="fade-up">
-                <h2 class="text-2xl sm:text-3xl lg:text-4xl moli-title mb-4 lg:mb-6"
+                <h2 class="text-3xl sm:text-4xl lg:text-5xl moli-title-black mb-4"
                     style="font-family: 'Amatic SC', cursive;">Contactanos</h2>
                 <p class="text-[#262020]/70 mb-6 lg:mb-10 text-sm sm:text-base">Conoce nuestras novedades y promociones
                 </p>
@@ -477,7 +513,8 @@
                     class="px-6 py-3 rounded-full border-2 border-[#262020] text-[#262020] hover:bg-[#262020]/5 transition w-full sm:w-auto text-sm sm:text-base font-medium">
                     <i class="fab fa-tiktok mr-2"></i>TikTok
                 </a>
-                <a href="https://www.ubereats.com/store/moli-cafe-moli-cafe/yxUtmGKWU8WF7ZHxKEBXpQ?diningMode=DELIVERY" target="_blank" rel="noopener noreferrer"
+                <a href="https://www.ubereats.com/store/moli-cafe-moli-cafe/yxUtmGKWU8WF7ZHxKEBXpQ?diningMode=DELIVERY"
+                    target="_blank" rel="noopener noreferrer"
                     class="px-6 py-3 rounded-full border-2 border-[#262020] text-[#262020] hover:bg-[#262020]/5 transition w-full sm:w-auto text-sm sm:text-base font-medium">
                     <i class="fab fa-uber mr-2"></i>Uber Eats
                 </a>
@@ -509,18 +546,19 @@
                                 Tuxtla Gutiérrez, Chis.</span>
                         </li>
                         <li><span class="font-semibold block sm:inline">Horarios:</span>
-                            <span class="block sm:inline">8:00 am – 10:00 pm (L-D)</span>
+                            <span class="block sm:inline">3:00 pm – 10:00 pm (L-D)</span>
                         </li>
                         <li><span class="font-semibold block sm:inline">Tel:</span>
-                            <span class="block sm:inline">(+52) 961 000 0000</span>
+                            <span class="block sm:inline">(+52) 961 120 6136</span>
                         </li>
-                        <li><span class="font-semibold block sm:inline">Correo:</span>
+                        {{-- <li><span class="font-semibold block sm:inline">Correo:</span>
                             <span class="block sm:inline">contacto@molicafe.mx</span>
-                        </li>
+                        </li> --}}
                     </ul>
                 </div>
                 <div class="text-center sm:text-left sm:col-span-2 lg:col-span-1">
-                    <h5 class="text-lg sm:text-xl font-bold mb-3" style="font-family: 'Amatic SC', cursive;">Navega</h5>
+                    <h5 class="text-lg sm:text-xl font-bold mb-3" style="font-family: 'Amatic SC', cursive;">Navega
+                    </h5>
                     <div class="flex flex-col gap-2 sm:gap-3 text-xs sm:text-sm max-w-sm mx-auto sm:mx-0">
                         <a href="#menu"
                             class="px-4 py-2 rounded-full bg-[#fff000] text-[#262020] font-semibold text-center hover:bg-[#fff000]/90 transition">Ver
@@ -535,7 +573,8 @@
             </div>
             <div
                 class="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-[#fff000]/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs sm:text-sm text-[#fff000]/80">
-                <p class="text-center sm:text-left">© <span id="year"></span> MoLi Café. Todos los derechos reservados.
+                <p class="text-center sm:text-left">© <span id="year"></span> MoLi Café. Todos los derechos
+                    reservados.
                 </p>
                 <nav class="flex items-center gap-3 sm:gap-4 text-center">
                     <a href="#promociones" class="hover:text-white transition">Promociones</a>
@@ -606,7 +645,7 @@
                 // Usando exchangerate-api.com (gratuita, sin API key necesaria)
                 const response = await fetch('https://open.exchangerate-api.com/v6/latest/MXN');
                 const data = await response.json();
-                
+
                 if (data && data.rates && data.rates.USD) {
                     exchangeRate = 1 / data.rates.USD; // Convertir de MXN a USD
                     console.log(`Tipo de cambio actualizado: 1 USD = ${exchangeRate.toFixed(2)} MXN`);
@@ -639,7 +678,7 @@
             button.addEventListener('click', () => {
                 // Remove active class from all buttons
                 currencyButtons.forEach(btn => btn.classList.remove('active'));
-                
+
                 // Add active class to clicked button
                 button.classList.add('active');
 
